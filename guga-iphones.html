@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUGA IPHONES – Loja Oficial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1420;
+    --card: #111827;
+    --card2: #151e2e;
+    --border: rgba(255,255,255,0.07);
+    --blue: #1e90ff;
+    --blue2: #0a6efd;
+    --cyan: #00cfff;
+    --accent: #1e90ff;
+    --accent-glow: rgba(30,144,255,0.25);
+    --text: #f0f4ff;
+    --text2: #8a96b0;
+    --text3: #5a657e;
+    --white: #fff;
+    --green: #00d97e;
+    --orange: #ff7c22;
+    --red: #ff4545;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 8px 40px rgba(0,0,0,0.45);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
+
+  a { text-decoration: none; color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  /* ─── HEADER ─── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,12,20,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .header-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: center; gap: 24px;
+    height: 68px;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .logo-icon {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .logo span { color: var(--cyan); }
+
+  nav { display: flex; gap: 4px; margin-left: auto; }
+
+  nav a {
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text2);
+    transition: all .2s;
+  }
+
+  nav a:hover, nav a.active { color: var(--text); background: rgba(255,255,255,0.07); }
+
+  .header-cta {
+    display: flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: opacity .2s;
+  }
+
+  .header-cta:hover { opacity: 0.88; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 24px 90px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% -10%, rgba(30,144,255,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(30,144,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,144,255,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 80%);
+  }
+
+  .hero-inner { position: relative; max-width: 800px; margin: 0 auto; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(30,144,255,0.1);
+    border: 1px solid rgba(30,144,255,0.3);
+    color: var(--cyan);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 .grad {
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    color: var(--text2);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto 36px;
+  }
+
+  .hero-btns {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--blue2), var(--cyan));
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none; cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 0 0 0 var(--accent-glow);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(30,144,255,0.35);
+  }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 13px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-secondary:hover { background: rgba(255,255,255,0.12); }
+
+  /* ─── TRUST BADGES ─── */
+  .trust-bar {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px;
+    overflow-x: auto;
+  }
+
+  .trust-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    gap: 36px; flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--text2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .trust-item .icon { font-size: 1.1rem; }
+  .trust-item strong { color: var(--text); }
+
+  /* ─── SECTION ─── */
+  .section { padding: 72px 24px; }
+  .section-sm { padding: 48px 24px; }
+
+  .container { max-width: 1280px; margin: 0 auto; }
+
+  .section-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 36px; gap: 16px; flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .section-sub {
+    color: var(--text2);
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  /* ─── FILTERS ─── */
+  .filters-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 36px;
+  }
+
+  .filter-group { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 160px; }
+
+  .filter-group label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text3);
+  }
+
+  .filter-group select,
+  .filter-group input {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 12px;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color .2s;
+    width: 100%;
+    appearance: none;
+  }
+
+  .filter-group select:focus,
+  .filter-group input:focus { border-color: var(--blue); }
+
+  .filter-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a96b0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+  }
+
+  .filter-btn {
+    background: linear-gradient(135deg, var(--blue2), var(--cyan));
+    color: #fff;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity .2s;
+    align-self: flex-end;
+  }
+
+  .filter-btn:hover { opacity: 0.88; }
+
+  .filter-clear {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    padding: 9px 16px;
+    border-radius: 9px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    align-self: flex-end;
+    transition: border-color .2s, color .2s;
+  }
+
+  .filter-clear:hover { border-color: var(--text2); color: var(--text); }
+
+  /* ─── PRODUCT GRID ─── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(30,144,255,0.2);
+    border-color: rgba(30,144,255,0.25);
+  }
+
+  .card-img {
+    background: linear-gradient(145deg, #131c2e, #0d1420);
+    height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 60%, rgba(30,144,255,0.08), transparent 65%);
+  }
+
+  .card-badges {
+    position: absolute; top: 10px; left: 10px;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(8px);
+  }
+
+  .badge-green { background: rgba(0,217,126,0.15); border: 1px solid rgba(0,217,126,0.3); color: var(--green); }
+  .badge-orange { background: rgba(255,124,34,0.15); border: 1px solid rgba(255,124,34,0.3); color: var(--orange); }
+  .badge-blue { background: rgba(30,144,255,0.15); border: 1px solid rgba(30,144,255,0.3); color: var(--cyan); }
+  .badge-gray { background: rgba(255,255,255,0.07); border: 1px solid var(--border); color: var(--text2); }
+
+  .card-body { padding: 18px; }
+
+  .card-model {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+
+  .card-storage {
+    color: var(--text2);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .card-price { margin-bottom: 14px; }
+
+  .price-old {
+    color: var(--text3);
+    font-size: 0.82rem;
+    text-decoration: line-through;
+    margin-bottom: 1px;
+  }
+
+  .price-current {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .price-save {
+    font-size: 0.78rem;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .card-actions { display: flex; gap: 8px; }
+
+  .btn-whatsapp {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 9px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity .2s, transform .15s;
+  }
+
+  .btn-whatsapp:hover { opacity: 0.9; transform: scale(1.02); }
+
+  .btn-details {
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border);
+    color: var(--text2);
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+  }
+
+  .btn-details:hover { background: rgba(255,255,255,0.12); color: var(--text); }
+
+  /* ─── MODAL ─── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: flex-end; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s;
+  }
+
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal-sheet {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px 24px 0 0;
+    width: 100%;
+    max-width: 700px;
+    max-height: 92vh;
+    overflow-y: auto;
+    transform: translateY(40px);
+    transition: transform .35s cubic-bezier(0.34, 1.3, 0.64, 1);
+    padding-bottom: 32px;
+  }
+
+  .modal-overlay.open .modal-sheet { transform: translateY(0); }
+
+  .modal-handle {
+    width: 40px; height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 14px auto 0;
+  }
+
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px 0;
+  }
+
+  .modal-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .modal-close {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    border: none; cursor: pointer;
+    color: var(--text2);
+    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+
+  .modal-close:hover { background: rgba(255,255,255,0.15); }
+
+  .modal-gallery {
+    display: flex; gap: 10px;
+    padding: 20px 24px;
+    overflow-x: auto;
+  }
+
+  .gallery-main {
+    flex-shrink: 0;
+    width: 200px; height: 200px;
+    background: linear-gradient(145deg, #131c2e, #0d1420);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 5rem;
+    border: 1px solid var(--border);
+  }
+
+  .gallery-thumbs { display: flex; flex-direction: column; gap: 8px; }
+
+  .gallery-thumb {
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: border-color .2s;
+  }
+
+  .gallery-thumb:hover, .gallery-thumb.active { border-color: var(--blue); }
+
+  .modal-content { padding: 0 24px; }
+
+  .modal-price-row {
+    display: flex; align-items: center; gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .modal-price {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .modal-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+
+  .specs-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .spec-item {
+    background: var(--bg2);
+    padding: 11px 14px;
+  }
+
+  .spec-label {
+    font-size: 0.75rem;
+    color: var(--text3);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .spec-val {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .inbox-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text2);
+    margin-bottom: 10px;
+  }
+
+  .inbox-items {
+    display: flex; flex-wrap: wrap; gap: 7px;
+    margin-bottom: 24px;
+  }
+
+  .inbox-tag {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    padding: 5px 11px;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    color: var(--text2);
+  }
+
+  .modal-buy-btn {
+    width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    color: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity .2s, transform .15s;
+  }
+
+  .modal-buy-btn:hover { opacity: 0.9; transform: scale(1.01); }
+
+  /* ─── ACCESSORIES ─── */
+  .acc-tabs {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .acc-tab {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all .2s;
+  }
+
+  .acc-tab.active, .acc-tab:hover {
+    background: rgba(30,144,255,0.12);
+    border-color: rgba(30,144,255,0.4);
+    color: var(--cyan);
+  }
+
+  .acc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .acc-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform .2s, border-color .2s;
+  }
+
+  .acc-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(30,144,255,0.2);
+  }
+
+  .acc-img {
+    height: 130px;
+    background: linear-gradient(145deg, #131c2e, #0d1420);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+  }
+
+  .acc-body { padding: 14px; }
+
+  .acc-name {
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .acc-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: 'Syne', sans-serif;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .btn-acc-wa {
+    width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    color: #fff;
+    padding: 9px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity .2s;
+  }
+
+  .btn-acc-wa:hover { opacity: 0.88; }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex; align-items: center; gap: 16px;
+    transition: border-color .2s;
+  }
+
+  .contact-card:hover { border-color: rgba(30,144,255,0.25); }
+
+  .contact-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .contact-icon.wa { background: rgba(37,211,102,0.15); }
+  .contact-icon.mail { background: rgba(30,144,255,0.15); }
+
+  .contact-label { font-size: 0.78rem; color: var(--text3); font-weight: 500; margin-bottom: 3px; }
+  .contact-val { font-weight: 700; font-size: 0.95rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text3);
+    font-size: 0.85rem;
+  }
+
+  footer strong { color: var(--text2); }
+
+  /* ─── FLOATING WA ─── */
+  .float-wa {
+    position: fixed; bottom: 28px; right: 24px; z-index: 150;
+    width: 58px; height: 58px;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .float-wa:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 36px rgba(37,211,102,0.55);
+  }
+
+  .float-wa::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.35);
+    animation: pulse 2.2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    70% { transform: scale(1.7); opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* ─── NO RESULTS ─── */
+  .no-results {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text2);
+  }
+
+  .no-results .icon { font-size: 3rem; margin-bottom: 12px; }
+  .no-results p { font-size: 1rem; }
+
+  /* ─── HIGHLIGHTS ─── */
+  .highlights-strip {
+    display: flex; gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .highlight-card {
+    flex-shrink: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    width: 200px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    text-align: center;
+    transition: border-color .2s;
+  }
+
+  .highlight-card:hover { border-color: rgba(30,144,255,0.25); }
+  .highlight-card .emoji { font-size: 2.5rem; }
+  .highlight-card strong { font-family: 'Syne', sans-serif; font-size: 0.92rem; }
+  .highlight-card span { color: var(--text2); font-size: 0.8rem; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    nav { display: none; }
+    .header-cta span { display: none; }
+    .filters-bar { flex-direction: column; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .gallery-main { width: 160px; height: 160px; }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+  /* search input wrapper */
+  .search-wrap { position: relative; flex: 2; min-width: 200px; }
+  .search-wrap input { padding-left: 36px; }
+  .search-icon {
+    position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+    color: var(--text3); font-size: 0.9rem; pointer-events: none;
+  }
+
+  /* result count */
+  .result-count {
+    color: var(--text3);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .result-count strong { color: var(--text); }
+
+  /* divider */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* section divider pill */
+  .section-divider {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  .section-divider-pill {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🍎</div>
+      GUGA <span>IPHONES</span>
+    </div>
+    <nav>
+      <a href="#iphones" class="active">iPhones</a>
+      <a href="#acessorios">Acessórios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="header-cta" href="https://wa.me/5521967519632?text=Olá%2C+GUGA+IPHONES!+Tenho+uma+dúvida+e+gostaria+de+mais+informações." target="_blank">
+      💬 <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">🍎 Loja Especializada em iPhone</div>
+    <h1>Seu próximo iPhone<br>está aqui, <span class="grad">com garantia</span></h1>
+    <p>iPhones novos, usados e recondicionados com até 12 meses de garantia. Atendimento personalizado direto no WhatsApp.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollTo({top: document.getElementById('iphones').offsetTop - 80, behavior:'smooth'})">
+        📱 Ver iPhones
+      </button>
+      <a class="btn-secondary" href="https://wa.me/5521967519632" target="_blank">
+        💬 Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="icon">✅</span><div><strong>12 meses</strong> de garantia</div></div>
+    <div class="trust-item"><span class="icon">🔬</span><div>Produto <strong>testado</strong></div></div>
+    <div class="trust-item"><span class="icon">🏪</span><div>Loja <strong>verificada</strong></div></div>
+    <div class="trust-item"><span class="icon">💬</span><div>Atendimento via <strong>WhatsApp</strong></div></div>
+    <div class="trust-item"><span class="icon">🔄</span><div><strong>Troca</strong> se houver problema</div></div>
+  </div>
+</div>
+
+<!-- DESTAQUES -->
+<section class="section-sm" id="destaques">
+  <div class="container">
+    <div class="section-divider">
+      <div class="section-divider-pill">⭐ Mais Vendidos</div>
+    </div>
+    <div class="highlights-strip" id="highlights-strip">
+      <!-- JS will populate -->
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- IPHONES -->
+<section class="section" id="iphones">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-title">📱 iPhones Disponíveis</div>
+        <div class="section-sub">Selecione o modelo ideal para você</div>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters-bar">
+      <div class="search-wrap filter-group">
+        <label>Buscar</label>
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Ex: iPhone 15, iPhone 13 Pro..." oninput="filterProducts()">
+      </div>
+      <div class="filter-group">
+        <label>Modelo</label>
+        <select id="filter-model" onchange="filterProducts()">
+          <option value="">Todos os modelos</option>
+          <option value="13">iPhone 13</option>
+          <option value="14">iPhone 14</option>
+          <option value="15">iPhone 15</option>
+          <option value="16">iPhone 16</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Armazenamento</label>
+        <select id="filter-storage" onchange="filterProducts()">
+          <option value="">Qualquer</option>
+          <option value="128GB">128GB</option>
+          <option value="256GB">256GB</option>
+          <option value="512GB">512GB</option>
+          <option value="1TB">1TB</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Faixa de preço</label>
+        <select id="filter-price" onchange="filterProducts()">
+          <option value="">Qualquer preço</option>
+          <option value="0-2000">Até R$ 2.000</option>
+          <option value="2000-4000">R$ 2.000 – R$ 4.000</option>
+          <option value="4000-99999">Acima de R$ 4.000</option>
+        </select>
+      </div>
+      <button class="filter-clear" onclick="clearFilters()">✕ Limpar</button>
+    </div>
+
+    <div class="result-count" id="result-count"></div>
+
+    <div class="product-grid" id="product-grid">
+      <!-- JS will populate -->
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ACESSÓRIOS -->
+<section class="section" id="acessorios">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-title">🎒 Acessórios</div>
+        <div class="section-sub">Tudo para complementar seu iPhone</div>
+      </div>
+    </div>
+
+    <div class="acc-tabs">
+      <button class="acc-tab active" onclick="filterAcc('all', this)">Todos</button>
+      <button class="acc-tab" onclick="filterAcc('carregador', this)">⚡ Carregadores</button>
+      <button class="acc-tab" onclick="filterAcc('pelicula', this)">🛡️ Películas</button>
+      <button class="acc-tab" onclick="filterAcc('capa', this)">📦 Capas</button>
+    </div>
+
+    <div class="acc-grid" id="acc-grid">
+      <!-- JS will populate -->
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTATO -->
+<section class="section contact-section" id="contato">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-title">📞 Fale Conosco</div>
+        <div class="section-sub">Estamos prontos para te atender</div>
+      </div>
+    </div>
+    <div class="contact-cards">
+      <a href="https://wa.me/5521967519632" target="_blank" class="contact-card">
+        <div class="contact-icon wa">💬</div>
+        <div>
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-val">(21) 96751-9632</div>
+        </div>
+      </a>
+      <a href="mailto:gugaiphones.vendas2026@gmail.com" class="contact-card">
+        <div class="contact-icon mail">✉️</div>
+        <div>
+          <div class="contact-label">E-mail</div>
+          <div class="contact-val">gugaiphones.vendas2026@gmail.com</div>
+        </div>
+      </a>
+      <div class="contact-card">
+        <div class="contact-icon" style="background: rgba(255,200,30,0.15);">⏰</div>
+        <div>
+          <div class="contact-label">Atendimento</div>
+          <div class="contact-val">Seg–Sáb, 9h–20h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>GUGA IPHONES</strong> · Todos os direitos reservados</p>
+  <p style="margin-top:6px;">WhatsApp: <strong>(21) 96751-9632</strong> · gugaiphones.vendas2026@gmail.com</p>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="float-wa" href="https://wa.me/5521967519632?text=Olá%2C+GUGA+IPHONES!+Gostaria+de+mais+informações." target="_blank" title="Falar no WhatsApp">💬</a>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-sheet" id="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">Detalhes do Produto</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+const WA = '5521967519632';
+
+const products = [
+  {
+    id: 1,
+    model: 'iPhone 16 Pro Max',
+    storage: '256GB',
+    price: 9499,
+    oldPrice: 10999,
+    condition: 'Novo',
+    stock: 'Em estoque',
+    guarantee: '12 meses',
+    emoji: '📱',
+    highlight: true,
+    color: 'Titânio Natural',
+    specs: { Tela: '6.9" Super Retina XDR', Processador: 'A18 Pro', Câmera: '48MP + 12MP + 12MP', Bateria: '4685mAh', 'Sistema Op.': 'iOS 18', Conectividade: '5G + Wi-Fi 7' },
+    inbox: ['iPhone', 'Cabo USB-C', 'Documentação'],
+    images: ['📱','🔍','⚡','🎁']
+  },
+  {
+    id: 2,
+    model: 'iPhone 16 Pro',
+    storage: '128GB',
+    price: 7799,
+    oldPrice: 8999,
+    condition: 'Novo',
+    stock: 'Últimas unidades',
+    guarantee: '12 meses',
+    emoji: '📱',
+    highlight: true,
+    color: 'Titânio Preto',
+    specs: { Tela: '6.3" Super Retina XDR', Processador: 'A18 Pro', Câmera: '48MP + 12MP + 12MP', Bateria: '3582mAh', 'Sistema Op.': 'iOS 18', Conectividade: '5G + Wi-Fi 7' },
+    inbox: ['iPhone', 'Cabo USB-C', 'Documentação'],
+    images: ['📱','🔬','⚡','🎁']
+  },
+  {
+    id: 3,
+    model: 'iPhone 15 Pro',
+    storage: '256GB',
+    price: 6299,
+    oldPrice: 7499,
+    condition: 'Recondicionado',
+    stock: 'Em estoque',
+    guarantee: '12 meses',
+    emoji: '📲',
+    highlight: true,
+    color: 'Titânio Azul',
+    specs: { Tela: '6.1" Super Retina XDR', Processador: 'A17 Pro', Câmera: '48MP + 12MP + 12MP', Bateria: '3274mAh', 'Sistema Op.': 'iOS 18', Conectividade: '5G + Wi-Fi 6E' },
+    inbox: ['iPhone', 'Cabo USB-C', 'Película aplicada'],
+    images: ['📲','🔍','⚡','✅']
+  },
+  {
+    id: 4,
+    model: 'iPhone 15',
+    storage: '128GB',
+    price: 4299,
+    oldPrice: 5199,
+    condition: 'Novo',
+    stock: 'Em estoque',
+    guarantee: '12 meses',
+    emoji: '📱',
+    highlight: false,
+    color: 'Preto',
+    specs: { Tela: '6.1" Super Retina XDR', Processador: 'A16 Bionic', Câmera: '48MP + 12MP', Bateria: '3349mAh', 'Sistema Op.': 'iOS 18', Conectividade: '5G + Wi-Fi 6' },
+    inbox: ['iPhone', 'Cabo USB-C', 'Documentação'],
+    images: ['📱','📸','⚡','🎁']
+  },
+  {
+    id: 5,
+    model: 'iPhone 14 Pro',
+    storage: '256GB',
+    price: 5199,
+    oldPrice: 6299,
+    condition: 'Recondicionado',
+    stock: 'Últimas unidades',
+    guarantee: '6 meses',
+    emoji: '📲',
+    highlight: false,
+    color: 'Roxo Intenso',
+    specs: { Tela: '6.1" Super Retina XDR', Processador: 'A16 Bionic', Câmera: '48MP + 12MP + 12MP', Bateria: '3200mAh', 'Sistema Op.': 'iOS 17', Conectividade: '5G + Wi-Fi 6' },
+    inbox: ['iPhone', 'Cabo Lightning', 'Película original'],
+    images: ['📲','🔭','⚡','📦']
+  },
+  {
+    id: 6,
+    model: 'iPhone 14',
+    storage: '128GB',
+    price: 3599,
+    oldPrice: 4499,
+    condition: 'Usado',
+    stock: 'Em estoque',
+    guarantee: '3 meses',
+    emoji: '📱',
+    highlight: false,
+    color: 'Azul',
+    specs: { Tela: '6.1" Super Retina XDR', Processador: 'A15 Bionic', Câmera: '12MP + 12MP', Bateria: '3279mAh', 'Sistema Op.': 'iOS 17', Conectividade: '5G + Wi-Fi 6' },
+    inbox: ['iPhone', 'Cabo Lightning'],
+    images: ['📱','📷','🔋','📦']
+  },
+  {
+    id: 7,
+    model: 'iPhone 13 Pro Max',
+    storage: '512GB',
+    price: 4799,
+    oldPrice: 5899,
+    condition: 'Recondicionado',
+    stock: 'Em estoque',
+    guarantee: '6 meses',
+    emoji: '📲',
+    highlight: false,
+    color: 'Verde Alpino',
+    specs: { Tela: '6.7" Super Retina XDR', Processador: 'A15 Bionic', Câmera: '12MP + 12MP + 12MP', Bateria: '4352mAh', 'Sistema Op.': 'iOS 17', Conectividade: '5G + Wi-Fi 6' },
+    inbox: ['iPhone', 'Cabo Lightning', 'Película e capa inclusas'],
+    images: ['📲','🌲','⚡','🎁']
+  },
+  {
+    id: 8,
+    model: 'iPhone 13',
+    storage: '128GB',
+    price: 2699,
+    oldPrice: 3299,
+    condition: 'Usado',
+    stock: 'Últimas unidades',
+    guarantee: '3 meses',
+    emoji: '📱',
+    highlight: false,
+    color: 'Meia-Noite',
+    specs: { Tela: '6.1" Super Retina XDR', Processador: 'A15 Bionic', Câmera: '12MP + 12MP', Bateria: '3227mAh', 'Sistema Op.': 'iOS 17', Conectividade: '5G + Wi-Fi 6' },
+    inbox: ['iPhone', 'Cabo Lightning'],
+    images: ['📱','🌙','📸','📦']
+  }
+];
+
+const accessories = [
+  { id: 'a1', name: 'Carregador USB-C 20W Original', price: 149, emoji: '⚡', category: 'carregador' },
+  { id: 'a2', name: 'Carregador MagSafe 15W', price: 229, emoji: '🔌', category: 'carregador' },
+  { id: 'a3', name: 'Carregador USB-C 35W (Dual)', price: 199, emoji: '⚡', category: 'carregador' },
+  { id: 'a4', name: 'Película Vidro 9H iPhone 15/16', price: 49, emoji: '🛡️', category: 'pelicula' },
+  { id: 'a5', name: 'Película Privacidade iPhone 14/15', price: 69, emoji: '🔒', category: 'pelicula' },
+  { id: 'a6', name: 'Capa Silicone MagSafe iPhone 16', price: 129, emoji: '🧲', category: 'capa' },
+  { id: 'a7', name: 'Capa Transparente Anti-Impacto', price: 79, emoji: '📦', category: 'capa' },
+  { id: 'a8', name: 'Capa Couro Premium MagSafe', price: 189, emoji: '👜', category: 'capa' },
+];
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function fmt(v) { return 'R$ ' + v.toLocaleString('pt-BR'); }
+
+function waLink(product) {
+  const msg = encodeURIComponent(
+    `Olá, GUGA IPHONES! Tenho interesse no produto:\n` +
+    `${product.model} – ${product.storage}\n` +
+    `Preço: ${fmt(product.price)}\n` +
+    `Vi pelo site\n\nPoderia me passar mais informações sobre disponibilidade e formas de pagamento?`
+  );
+  return `https://wa.me/${WA}?text=${msg}`;
+}
+
+function waLinkAcc(acc) {
+  const msg = encodeURIComponent(
+    `Olá, GUGA IPHONES! Tenho interesse no produto:\n` +
+    `${acc.name}\n` +
+    `Preço: ${fmt(acc.price)}\n` +
+    `Vi pelo site\n\nPoderia me passar mais informações sobre disponibilidade e formas de pagamento?`
+  );
+  return `https://wa.me/${WA}?text=${msg}`;
+}
+
+function conditionBadge(c) {
+  if (c === 'Novo') return `<span class="badge badge-blue">✨ Novo</span>`;
+  if (c === 'Recondicionado') return `<span class="badge badge-green">🔬 Recondicionado</span>`;
+  return `<span class="badge badge-gray">📦 Usado</span>`;
+}
+
+function stockBadge(s) {
+  if (s === 'Últimas unidades') return `<span class="badge badge-orange">🔥 Últimas unidades</span>`;
+  return `<span class="badge badge-green">✅ Em estoque</span>`;
+}
+
+// ── RENDER PRODUCTS ───────────────────────────────────────────────────────────
+function renderCard(p) {
+  const save = p.oldPrice ? p.oldPrice - p.price : 0;
+  return `
+    <div class="product-card" data-id="${p.id}">
+      <div class="card-img">
+        <div class="card-badges">
+          ${conditionBadge(p.condition)}
+          ${stockBadge(p.stock)}
+        </div>
+        ${p.emoji}
+      </div>
+      <div class="card-body">
+        <div class="card-model">${p.model}</div>
+        <div class="card-storage">${p.storage} · ${p.color}</div>
+        <div class="card-price">
+          ${p.oldPrice ? `<div class="price-old">${fmt(p.oldPrice)}</div>` : ''}
+          <div class="price-current">${fmt(p.price)}</div>
+          ${save > 0 ? `<div class="price-save">💰 Você economiza ${fmt(save)}</div>` : ''}
+        </div>
+        <div class="card-actions">
+          <a class="btn-whatsapp" href="${waLink(p)}" target="_blank">💬 Comprar</a>
+          <button class="btn-details" onclick="openModal(${p.id})">Ver detalhes</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function filterProducts() {
+  const search = document.getElementById('search-input').value.toLowerCase();
+  const model = document.getElementById('filter-model').value;
+  const storage = document.getElementById('filter-storage').value;
+  const priceRange = document.getElementById('filter-price').value;
+
+  let filtered = products.filter(p => {
+    const matchSearch = !search || p.model.toLowerCase().includes(search) || p.storage.toLowerCase().includes(search) || p.condition.toLowerCase().includes(search);
+    const matchModel = !model || p.model.toLowerCase().includes(model);
+    const matchStorage = !storage || p.storage === storage;
+    let matchPrice = true;
+    if (priceRange) {
+      const [min, max] = priceRange.split('-').map(Number);
+      matchPrice = p.price >= min && p.price <= max;
+    }
+    return matchSearch && matchModel && matchStorage && matchPrice;
+  });
+
+  const grid = document.getElementById('product-grid');
+  const count = document.getElementById('result-count');
+
+  count.innerHTML = `Mostrando <strong>${filtered.length}</strong> produto${filtered.length !== 1 ? 's' : ''}`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="no-results">
+        <div class="icon">🔍</div>
+        <p>Nenhum produto encontrado. Tente outros filtros ou <a href="https://wa.me/${WA}" target="_blank" style="color:var(--cyan)">fale conosco no WhatsApp</a>.</p>
+      </div>`;
+  } else {
+    grid.innerHTML = filtered.map(renderCard).join('');
+  }
+}
+
+function clearFilters() {
+  document.getElementById('search-input').value = '';
+  document.getElementById('filter-model').value = '';
+  document.getElementById('filter-storage').value = '';
+  document.getElementById('filter-price').value = '';
+  filterProducts();
+}
+
+// ── HIGHLIGHTS ────────────────────────────────────────────────────────────────
+function renderHighlights() {
+  const strip = document.getElementById('highlights-strip');
+  const highlighted = products.filter(p => p.highlight);
+  strip.innerHTML = highlighted.map(p => `
+    <div class="highlight-card" onclick="openModal(${p.id})" style="cursor:pointer">
+      <div class="emoji">${p.emoji}</div>
+      <strong>${p.model}</strong>
+      <span>${p.storage}</span>
+      <span style="color:var(--cyan);font-weight:700">${fmt(p.price)}</span>
+    </div>
+  `).join('');
+}
+
+// ── ACCESSORIES ───────────────────────────────────────────────────────────────
+function renderAcc(cat) {
+  const grid = document.getElementById('acc-grid');
+  const filtered = cat === 'all' ? accessories : accessories.filter(a => a.category === cat);
+  grid.innerHTML = filtered.map(a => `
+    <div class="acc-card">
+      <div class="acc-img">${a.emoji}</div>
+      <div class="acc-body">
+        <div class="acc-name">${a.name}</div>
+        <div class="acc-price">${fmt(a.price)}</div>
+        <a class="btn-acc-wa" href="${waLinkAcc(a)}" target="_blank">💬 Comprar via WhatsApp</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterAcc(cat, btn) {
+  document.querySelectorAll('.acc-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderAcc(cat);
+}
+
+// ── MODAL ─────────────────────────────────────────────────────────────────────
+function openModal(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+
+  document.getElementById('modal-title').textContent = p.model;
+
+  const specsHTML = Object.entries(p.specs).map(([k,v]) => `
+    <div class="spec-item">
+      <div class="spec-label">${k}</div>
+      <div class="spec-val">${v}</div>
+    </div>
+  `).join('');
+
+  const inboxHTML = p.inbox.map(i => `<span class="inbox-tag">✓ ${i}</span>`).join('');
+  const save = p.oldPrice ? p.oldPrice - p.price : 0;
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-gallery">
+      <div class="gallery-main" style="font-size:5rem">${p.emoji}</div>
+      <div class="gallery-thumbs">
+        ${p.images.map((img, i) => `<div class="gallery-thumb ${i===0?'active':''}">${img}</div>`).join('')}
+      </div>
+    </div>
+    <div class="modal-content">
+      <div class="modal-price-row">
+        ${p.oldPrice ? `<div style="color:var(--text3);text-decoration:line-through;font-size:1rem">${fmt(p.oldPrice)}</div>` : ''}
+        <div class="modal-price">${fmt(p.price)}</div>
+        ${save > 0 ? `<span class="badge badge-green">💰 −${fmt(save)}</span>` : ''}
+      </div>
+      <div class="modal-badges">
+        ${conditionBadge(p.condition)}
+        ${stockBadge(p.stock)}
+        <span class="badge badge-blue">🛡️ ${p.guarantee} de garantia</span>
+        <span class="badge badge-gray">🎨 ${p.color}</span>
+      </div>
+
+      <div class="specs-title">Especificações Técnicas</div>
+      <div class="specs-grid">${specsHTML}</div>
+
+      <div class="inbox-title">O que acompanha na caixa</div>
+      <div class="inbox-items">${inboxHTML}</div>
+
+      <a class="modal-buy-btn" href="${waLink(p)}" target="_blank">
+        💬 Comprar via WhatsApp
+      </a>
+    </div>
+  `;
+
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modal')) return;
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderHighlights();
+filterProducts();
+renderAcc('all');
+</script>
+</body>
+</html>
