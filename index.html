@@ -1,561 +1,522 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>GUGA STORE – iPhones, Perfumes & Eletrônicos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#080c14;--bg2:#0d1420;--card:#111827;--card2:#151e2e;--border:rgba(255,255,255,0.07);--blue:#1e90ff;--blue2:#0a6efd;--cyan:#00cfff;--green:#00d97e;--orange:#ff7c22;--red:#ff4545;--pink:#ff69b4;--purple:#9b59b6;--text:#f0f4ff;--text2:#8a96b0;--text3:#5a657e;--radius:16px;--radius-sm:10px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;width:100%}
-h1,h2,h3,h4,h5{font-family:'Syne',sans-serif}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
-header{position:sticky;top:0;z-index:100;background:rgba(8,12,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
-.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:16px;height:68px}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-.5px;white-space:nowrap;display:flex;align-items:center;gap:8px}
-.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.logo span{color:var(--cyan)}
-nav{display:flex;gap:4px;margin-left:auto}
-nav a{padding:7px 14px;border-radius:8px;font-size:.85rem;font-weight:500;color:var(--text2);transition:all .2s}
-nav a:hover{color:var(--text);background:rgba(255,255,255,.07)}
-.header-cta{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#128C7E,#25D366);color:#fff;padding:8px 16px;border-radius:10px;font-size:.8rem;font-weight:600;white-space:nowrap}
-.admin-btn-header{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);padding:6px 12px;border-radius:9px;font-size:.75rem;font-weight:600;cursor:pointer;white-space:nowrap}
-.hero{position:relative;overflow:hidden;padding:60px 24px 70px;text-align:center}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% -10%,rgba(30,144,255,.18) 0%,transparent 70%)}
-.hero-inner{position:relative;max-width:800px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(30,144,255,.1);border:1px solid rgba(30,144,255,.3);color:var(--cyan);padding:6px 14px;border-radius:999px;font-size:.75rem;font-weight:600;margin-bottom:24px}
-.hero h1{font-size:clamp(1.6rem,6vw,3rem);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px}
-.hero h1 .grad{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:var(--text2);font-size:.95rem;line-height:1.6;max-width:520px;margin:0 auto 36px}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue2),var(--cyan));color:#fff;padding:10px 24px;border-radius:12px;font-weight:700;font-size:.85rem;border:none;cursor:pointer}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid var(--border);color:var(--text);padding:10px 24px;border-radius:12px;font-weight:600;font-size:.85rem;cursor:pointer}
-.trust-bar{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 24px;overflow-x:auto}
-.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:8px;color:var(--text2);font-size:.75rem;font-weight:500;white-space:nowrap}
-.trust-item strong{color:var(--text)}
-.section{padding:50px 24px}
-.section-sm{padding:30px 24px}
-.container{max-width:1280px;margin:0 auto}
-.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px;gap:16px;flex-wrap:wrap}
-.section-title{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:800;letter-spacing:-.5px}
-.section-sub{color:var(--text2);font-size:.8rem;margin-top:4px}
-.divider{border:none;border-top:1px solid var(--border);margin:0}
-.filters-bar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:30px}
-.filter-group{display:flex;flex-direction:column;gap:5px;flex:1;min-width:110px}
-.filter-group label{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text3)}
-.filter-group select,.filter-group input{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:7px 10px;border-radius:8px;font-size:.8rem;outline:none;width:100%}
-.filter-group select:focus,.filter-group input:focus{border-color:var(--blue)}
-.filter-clear{background:transparent;border:1px solid var(--border);color:var(--text2);padding:7px 14px;border-radius:8px;font-size:.75rem;cursor:pointer;align-self:flex-end}
-.search-wrap{position:relative;flex:2;min-width:150px}
-.search-wrap input{padding-left:28px}
-.search-icon{position:absolute;left:8px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:.7rem}
-.result-count{color:var(--text3);font-size:.75rem;margin-bottom:12px}
-.result-count strong{color:var(--text)}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
-.product-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
-.product-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3);border-color:rgba(30,144,255,.3)}
-.card-img{background:linear-gradient(145deg,#131c2e,#0d1420);height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.card-badges{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:4px;z-index:2}
-.card-body{padding:14px}
-.card-model{font-weight:700;font-size:.9rem;margin-bottom:3px}
-.card-storage{color:var(--text2);font-size:.7rem;margin-bottom:6px}
-.card-price{margin-bottom:8px}
-.price-old{color:var(--text3);font-size:.7rem;text-decoration:line-through}
-.price-current{font-size:1.2rem;font-weight:800;color:var(--text)}
-.price-save{font-size:.65rem;color:var(--green);margin-top:2px}
-.payment-badge{display:flex;gap:6px;margin:8px 0;font-size:.6rem;color:var(--text2);flex-wrap:wrap}
-.payment-badge span{background:rgba(255,255,255,.05);padding:2px 6px;border-radius:5px}
-.installment{font-size:.65rem;color:var(--cyan);margin-bottom:6px}
-.card-actions{display:flex;gap:6px;margin-top:6px}
-.btn-whatsapp{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;background:linear-gradient(135deg,#128C7E,#25D366);color:#fff;padding:7px 10px;border-radius:8px;font-size:.7rem;font-weight:700;border:none;cursor:pointer}
-.btn-details{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.07);border:1px solid var(--border);color:var(--text2);padding:7px 10px;border-radius:8px;font-size:.7rem;cursor:pointer}
-.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;border-radius:5px;font-size:.6rem;font-weight:700}
-.badge-green{background:rgba(0,217,126,.15);border:1px solid rgba(0,217,126,.3);color:var(--green)}
-.badge-orange{background:rgba(255,124,34,.15);border:1px solid rgba(255,124,34,.3);color:var(--orange)}
-.badge-blue{background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3);color:var(--cyan)}
-.badge-pink{background:rgba(255,105,180,.15);border:1px solid rgba(255,105,180,.3);color:var(--pink)}
-.badge-purple{background:rgba(155,89,182,.15);border:1px solid rgba(155,89,182,.3);color:var(--purple)}
-.badge-gray{background:rgba(255,255,255,.07);border:1px solid var(--border);color:var(--text2)}
-.shipping-section{background:var(--bg2);border-radius:var(--radius);padding:20px;margin-bottom:25px}
-.shipping-title{font-size:1rem;font-weight:700;margin-bottom:12px}
-.shipping-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
-.shipping-input{flex:2;min-width:130px}
-.shipping-input input{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;width:100%}
-.coupon-row{display:flex;gap:8px;align-items:center;margin-top:14px;flex-wrap:wrap}
-.coupon-input{flex:1;min-width:130px}
-.coupon-input input{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;width:100%}
-.coupon-result{color:var(--green);font-size:.75rem;margin-top:6px}
-.shipping-result{background:var(--card);border-radius:10px;padding:12px;margin-top:12px;display:none}
-.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal-sheet{background:var(--card);border:1px solid var(--border);border-radius:24px 24px 0 0;width:100%;max-width:550px;max-height:80vh;overflow-y:auto;transform:translateY(40px);transition:transform .35s;padding-bottom:16px}
-.modal-overlay.open .modal-sheet{transform:translateY(0)}
-.modal-handle{width:40px;height:4px;background:var(--border);border-radius:2px;margin:10px auto 0}
-.modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 0}
-.modal-close{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.08);border:none;cursor:pointer;color:var(--text2)}
-.modal-content{padding:14px 18px}
-.modal-price{font-size:1.5rem;font-weight:800}
-.modal-buy-btn{width:100%;background:linear-gradient(135deg,#128C7E,#25D366);color:#fff;padding:12px;border-radius:10px;font-size:.9rem;font-weight:700;border:none;cursor:pointer;margin-top:14px}
-.contact-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.contact-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
-.contact-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;align-items:center;gap:12px}
-.contact-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.contact-icon.wa{background:rgba(37,211,102,.15)}
-.contact-label{font-size:.65rem;color:var(--text3)}
-.contact-val{font-weight:700;font-size:.8rem}
-footer{padding:25px 24px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:.7rem}
-.float-wa{position:fixed;bottom:22px;right:18px;z-index:150;width:48px;height:48px;background:linear-gradient(135deg,#128C7E,#25D366);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;color:#fff}
-.admin-panel{position:fixed;inset:0;z-index:400;background:var(--bg);overflow-y:auto;display:none}
-.admin-panel.open{display:block}
-.admin-topbar{background:rgba(8,12,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 16px;position:sticky;top:0;z-index:10}
-.admin-topbar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;height:55px;flex-wrap:wrap}
-.admin-logo{font-weight:800;font-size:.9rem}
-.admin-logo span{color:var(--orange)}
-.admin-tabs{display:flex;gap:3px;margin-left:auto;flex-wrap:wrap}
-.admin-tab{padding:5px 10px;border-radius:6px;border:none;background:transparent;color:var(--text2);font-size:.7rem;font-weight:600;cursor:pointer}
-.admin-tab.active,.admin-tab:hover{background:rgba(255,255,255,.08);color:var(--text)}
-.admin-close-btn{background:rgba(255,69,69,.12);border:1px solid rgba(255,69,69,.3);color:var(--red);padding:5px 10px;border-radius:6px;font-size:.7rem;cursor:pointer}
-.admin-body{max-width:1100px;margin:0 auto;padding:25px 16px}
-.admin-section{display:none}
-.admin-section.active{display:block}
-.admin-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;margin-bottom:25px}
-.admin-stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px}
-.stat-label{font-size:.65rem;color:var(--text2);margin-bottom:4px}
-.stat-val{font-size:1.5rem;font-weight:800}
-.admin-form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-full{grid-column:1/-1}
-.form-group{display:flex;flex-direction:column;gap:4px}
-.form-group label{font-size:.65rem;font-weight:600;color:var(--text3)}
-.form-group input,.form-group select{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:7px 10px;border-radius:7px;font-size:.8rem}
-.admin-product-list{display:flex;flex-direction:column;gap:10px}
-.admin-product-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.apl-img{width:42px;height:42px;border-radius:7px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.apl-info{flex:1}
-.apl-name{font-weight:700;font-size:.85rem}
-.apl-price{font-weight:800}
-.apl-actions{display:flex;gap:6px}
-.btn-edit{background:rgba(30,144,255,.12);border:1px solid rgba(30,144,255,.3);color:var(--cyan);padding:4px 8px;border-radius:5px;font-size:.65rem;cursor:pointer}
-.btn-del{background:rgba(255,69,69,.1);border:1px solid rgba(255,69,69,.25);color:var(--red);padding:4px 8px;border-radius:5px;font-size:.65rem;cursor:pointer}
-.admin-save-btn{background:linear-gradient(135deg,var(--blue2),var(--cyan));color:#fff;border:none;padding:8px 20px;border-radius:8px;font-weight:700;font-size:.8rem;cursor:pointer}
-.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card2);border:1px solid var(--border);color:var(--text);padding:8px 18px;border-radius:10px;font-size:.75rem;opacity:0;pointer-events:none;transition:all .3s;z-index:600;white-space:nowrap}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.toast.success{border-color:rgba(0,217,126,.4);color:var(--green)}
-.toast.error{border-color:rgba(255,69,69,.4);color:var(--red)}
-.toast.info{border-color:rgba(30,144,255,.4);color:var(--cyan)}
-@media(max-width:640px){nav{display:none}.header-cta span{display:none}.filters-bar{flex-direction:column}.form-grid{grid-template-columns:1fr}.admin-tabs{gap:2px}.admin-tab{padding:4px 6px;font-size:.65rem}.logo{font-size:.85rem}.logo span{display:none}.admin-btn-header{padding:4px 6px;font-size:.65rem}.float-wa{width:42px;height:42px;font-size:1rem}.contact-cards{grid-template-columns:1fr}.shipping-row{flex-direction:column}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GUGA IPHONES - Iphones, Perfumes e acessórios</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0c10; font-family: system-ui, -apple-system, sans-serif; color: #eef2ff; }
+        
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 15px 20px; background: #11141c; border-bottom: 1px solid #222733; }
+        .logo { font-size: 22px; font-weight: bold; }
+        .logo span { color: #1e90ff; }
+        .nav-cats { display: flex; gap: 8px; flex-wrap: wrap; }
+        .cat-btn { background: transparent; border: 1px solid #334155; padding: 8px 18px; border-radius: 40px; color: #94a3b8; cursor: pointer; font-weight: 500; }
+        .cat-btn.active { background: #1e90ff; border-color: #1e90ff; color: white; }
+        .admin-btn { background: #1e293b; border: 1px solid #334155; padding: 8px 18px; border-radius: 40px; color: white; cursor: pointer; }
+        .whatsapp-btn { background: #25D366; padding: 8px 18px; border-radius: 40px; text-decoration: none; color: black; font-weight: bold; display: inline-block; }
+        
+        /* Filtros */
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 20px 0 20px; background: #11141c; padding: 16px; border-radius: 20px; }
+        .filters input, .filters select { background: #1a1f2c; border: 1px solid #2a2f3c; color: white; padding: 10px 15px; border-radius: 12px; flex: 1; min-width: 130px; }
+        .filter-clear { background: #1e293b; border: none; padding: 0 20px; border-radius: 40px; cursor: pointer; color: white; }
+        
+        /* Produtos Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin: 20px; }
+        .product-card { background: #11141c; border-radius: 20px; padding: 15px; border: 1px solid #222733; transition: 0.2s; cursor: pointer; }
+        .product-card:hover { transform: translateY(-4px); border-color: #1e90ff; }
+        .card-img { height: 160px; background: #0d0f15; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 48px; overflow: hidden; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .card-title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+        .card-detail { font-size: 13px; color: #94a3b8; margin-bottom: 8px; }
+        .price-old { text-decoration: line-through; color: #888; font-size: 13px; }
+        .price-current { font-size: 22px; font-weight: bold; color: #1e90ff; margin: 5px 0; }
+        .payment-badge { display: flex; gap: 8px; margin: 10px 0; font-size: 11px; color: #94a3b8; }
+        .installment { font-size: 12px; color: #94a3b8; margin: 5px 0; }
+        .btn-buy { background: #25D366; color: black; font-weight: bold; border: none; width: 100%; padding: 10px; border-radius: 30px; cursor: pointer; margin-top: 8px; }
+        
+        /* Admin Panel */
+        .admin-panel { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0a0c10; z-index: 1000; overflow-y: auto; display: none; padding: 20px; }
+        .admin-panel.open { display: block; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; background: #11141c; padding: 15px 20px; border-radius: 20px; }
+        .admin-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tab-btn { background: #1e293b; border: none; padding: 8px 20px; border-radius: 30px; color: white; cursor: pointer; }
+        .tab-btn.active { background: #1e90ff; }
+        .admin-section { display: none; }
+        .admin-section.active { display: block; }
+        .form-card { background: #11141c; border-radius: 20px; padding: 25px; margin-bottom: 25px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 13px; color: #94a3b8; }
+        .form-group input, .form-group select { width: 100%; background: #1a1f2c; border: 1px solid #2a2f3c; color: white; padding: 10px 15px; border-radius: 12px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .products-list { display: flex; flex-direction: column; gap: 12px; }
+        .product-row { background: #11141c; border-radius: 16px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border: 1px solid #222733; }
+        .btn-edit { background: rgba(30,144,255,0.2); border: 1px solid rgba(30,144,255,0.3); color: #1e90ff; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+        .btn-del { background: rgba(255,69,69,0.2); border: 1px solid rgba(255,69,69,0.3); color: #ff4545; padding: 5px 12px; border-radius: 20px; cursor: pointer; }
+        .admin-save { background: #1e90ff; border: none; padding: 12px 24px; border-radius: 40px; color: white; font-weight: bold; cursor: pointer; width: 100%; margin-top: 10px; }
+        
+        /* Modal */
+        .modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; }
+        .modal-content { background: #11141c; border-radius: 24px; padding: 25px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .modal-close { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #1e90ff; color: white; padding: 10px 20px; border-radius: 40px; z-index: 1100; opacity: 0; transition: 0.2s; pointer-events: none; }
+        .toast.show { opacity: 1; }
+        
+        @media (max-width: 640px) { .filters { flex-direction: column; } .form-row { grid-template-columns: 1fr; } .nav-cats { order: 3; width: 100%; justify-content: center; } }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div class="logo"><div class="logo-icon">🍎</div>GUGA <span>STORE</span></div>
-    <nav><a href="#iphones">📱 iPhones</a><a href="#perfumes">✨ Perfumes</a><a href="#eletronicos">🎧 Eletrônicos</a><a href="#contato">📞 Contato</a></nav>
-    <button class="admin-btn-header" onclick="openAdminLogin()">⚙️ Admin</button>
-    <a class="header-cta" href="https://wa.me/5521967519632" target="_blank">💬 <span>WhatsApp</span></a>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">🍎✨🎧 Tudo em um só lugar</div>
-    <h1>iPhones, Perfumes &<br><span class="grad">Eletrônicos</span></h1>
-    <p>Os melhores preços em iPhones, perfumes importados e acessórios eletrônicos. Frete para todo Brasil.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="scrollTo({top:document.getElementById('iphones').offsetTop-80,behavior:'smooth'})">📱 Ver iPhones</button>
-      <button class="btn-secondary" onclick="scrollTo({top:document.getElementById('perfumes').offsetTop-80,behavior:'smooth'})">✨ Ver Perfumes</button>
-      <button class="btn-secondary" onclick="scrollTo({top:document.getElementById('eletronicos').offsetTop-80,behavior:'smooth'})">🎧 Ver Eletrônicos</button>
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">GUGA <span>IPHONES</span></div>
+    <div class="nav-cats">
+        <button class="cat-btn active" onclick="switchCategory('iphones')">📱 iPhones</button>
+        <button class="cat-btn" onclick="switchCategory('perfumes')">✨ Perfumes</button>
+        <button class="cat-btn" onclick="switchCategory('eletronicos')">🎧 Acessórios & Eletrônicos</button>
     </div>
-  </div>
-</section>
-
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item">✅ <strong>Garantia</strong> de 12 meses</div>
-    <div class="trust-item">🔬 Produtos <strong>testados</strong></div>
-    <div class="trust-item">🏪 Loja <strong>verificada</strong></div>
-    <div class="trust-item">💬 Atendimento <strong>WhatsApp</strong></div>
-    <div class="trust-item">📦 <strong>Frete</strong> para todo Brasil</div>
-    <div class="trust-item">💳 <strong>Pix 10% off</strong></div>
-  </div>
+    <div style="display: flex; gap: 10px;">
+        <button class="admin-btn" onclick="openAdminLogin()">⚙️ Admin</button>
+        <a href="https://wa.me/5521967519632" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+    </div>
 </div>
 
-<!-- IPHONES -->
-<section class="section" id="iphones">
-  <div class="container">
-    <div class="section-header"><div><div class="section-title">📱 iPhones</div><div class="section-sub">Novos, usados e recondicionados</div></div></div>
-    <div class="filters-bar">
-      <div class="search-wrap filter-group"><label>Buscar</label><span class="search-icon">🔍</span><input type="text" id="search-iphone" placeholder="Ex: iPhone 15..." oninput="filterIphones()"></div>
-      <div class="filter-group"><label>Armazenamento</label><select id="filter-storage-iphone" onchange="filterIphones()"><option value="">Qualquer</option><option value="128GB">128GB</option><option value="256GB">256GB</option><option value="512GB">512GB</option></select></div>
-      <div class="filter-group"><label>Preço até</label><select id="filter-price-iphone" onchange="filterIphones()"><option value="">Qualquer</option><option value="3000">R$3.000</option><option value="5000">R$5.000</option><option value="10000">R$10.000</option></select></div>
-      <button class="filter-clear" onclick="clearIphoneFilters()">✕ Limpar</button>
-    </div>
-    <div class="result-count" id="iphone-count"></div>
-    <div class="product-grid" id="iphone-grid"></div>
-  </div>
-</section>
-<hr class="divider">
+<!-- FILTROS (dinâmicos) -->
+<div id="filtersContainer" class="filters"></div>
 
-<!-- PERFUMES -->
-<section class="section" id="perfumes">
-  <div class="container">
-    <div class="section-header"><div><div class="section-title">✨ Perfumes</div><div class="section-sub">Importados e nacionais</div></div></div>
-    <div class="filters-bar">
-      <div class="search-wrap filter-group"><label>Buscar</label><span class="search-icon">🔍</span><input type="text" id="search-perfume" placeholder="Ex: Malbec, 212..." oninput="filterPerfumes()"></div>
-      <div class="filter-group"><label>Gênero</label><select id="filter-genero" onchange="filterPerfumes()"><option value="">Todos</option><option value="masculino">👨 Masculino</option><option value="feminino">👩 Feminino</option><option value="unissex">🔄 Unissex</option></select></div>
-      <div class="filter-group"><label>Marca</label><select id="filter-marca" onchange="filterPerfumes()"><option value="">Todas</option><option value="natura">Natura</option><option value="boticario">Boticário</option><option value="avon">Avon</option><option value="jequiti">Jequiti</option><option value="internacional">Importados</option></select></div>
-      <div class="filter-group"><label>Preço até</label><select id="filter-price-perfume" onchange="filterPerfumes()"><option value="">Qualquer</option><option value="100">R$100</option><option value="200">R$200</option><option value="300">R$300</option></select></div>
-      <button class="filter-clear" onclick="clearPerfumeFilters()">✕ Limpar</button>
-    </div>
-    <div class="result-count" id="perfume-count"></div>
-    <div class="product-grid" id="perfume-grid"></div>
-  </div>
-</section>
-<hr class="divider">
+<!-- PRODUTOS -->
+<div id="productsGrid" class="products-grid"></div>
 
-<!-- ELETRÔNICOS -->
-<section class="section" id="eletronicos">
-  <div class="container">
-    <div class="section-header"><div><div class="section-title">🎧 Eletrônicos & Acessórios</div><div class="section-sub">Fones, carregadores, capas, smartwatches e mais</div></div></div>
-    <div class="filters-bar">
-      <div class="search-wrap filter-group"><label>Buscar</label><span class="search-icon">🔍</span><input type="text" id="search-eletronico" placeholder="Ex: AirPods, Carregador..." oninput="filterEletronicos()"></div>
-      <div class="filter-group"><label>Categoria</label><select id="filter-categoria" onchange="filterEletronicos()"><option value="">Todas</option><option value="fones">🎧 Fones</option><option value="carregadores">🔌 Carregadores</option><option value="capas">📱 Capas</option><option value="smartwatches">⌚ Smartwatches</option><option value="caixas-som">🔊 Caixas de Som</option></select></div>
-      <div class="filter-group"><label>Preço até</label><select id="filter-price-eletronico" onchange="filterEletronicos()"><option value="">Qualquer</option><option value="200">R$200</option><option value="500">R$500</option><option value="1000">R$1.000</option><option value="2000">R$2.000</option></select></div>
-      <button class="filter-clear" onclick="clearEletronicoFilters()">✕ Limpar</button>
+<!-- MODAL LOGIN -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header"><h3>🔐 Acesso Admin</h3><button class="modal-close" onclick="closeLoginModal()">✕</button></div>
+        <input type="password" id="adminPassword" placeholder="Digite a senha" style="width:100%; background:#1a1f2c; border:1px solid #2a2f3c; color:white; padding:12px; border-radius:12px; margin-bottom:20px;">
+        <button onclick="checkAdminLogin()" style="background:#1e90ff; border:none; padding:12px; width:100%; border-radius:30px; color:white; cursor:pointer;">Entrar</button>
     </div>
-    <div class="result-count" id="eletronico-count"></div>
-    <div class="product-grid" id="eletronico-grid"></div>
-  </div>
-</section>
-<hr class="divider">
-
-<!-- SHIPPING & COUPON -->
-<div class="container" style="margin: 20px auto;">
-  <div class="shipping-section">
-    <div class="shipping-title">📦 Frete e Pagamento</div>
-    <div class="shipping-row">
-      <div class="shipping-input"><label class="filter-group label">📮 CEP de destino</label><input type="text" id="cep-destino" placeholder="00000-000" maxlength="9" onkeyup="formatarCEP(this)"></div>
-      <button class="btn-primary" onclick="calcularFrete()" style="padding:8px 16px;">🚚 Calcular frete</button>
-    </div>
-    <div id="resultado-frete" class="shipping-result"></div>
-    <div class="coupon-row">
-      <div class="coupon-input"><label class="filter-group label">🎟️ Cupom</label><input type="text" id="cupom-input" placeholder="Digite PIX10"></div>
-      <button class="btn-secondary" onclick="aplicarCupom()" style="padding:8px 16px;">Aplicar</button>
-    </div>
-    <div id="cupom-result" class="coupon-result"></div>
-    <div class="payment-badge" style="margin-top:12px; justify-content:center;"><span>💳 Cartão (até 12x)</span><span>📱 Pix (10% off)</span><span>📄 Boleto</span><span>🔒 Site seguro</span></div>
-  </div>
 </div>
-<hr class="divider">
 
-<!-- CONTATO -->
-<section class="section contact-section" id="contato">
-  <div class="container">
-    <div class="section-header"><div><div class="section-title">📞 Fale Conosco</div><div class="section-sub">Estamos prontos para te atender</div></div></div>
-    <div class="contact-cards">
-      <a href="https://wa.me/5521967519632" target="_blank" class="contact-card"><div class="contact-icon wa">💬</div><div><div class="contact-label">WhatsApp</div><div class="contact-val">(21) 96751-9632</div></div></a>
-      <a href="mailto:gugaiphones.vendas2026@gmail.com" class="contact-card"><div class="contact-icon mail">✉️</div><div><div class="contact-label">E-mail</div><div class="contact-val">gugaiphones.vendas2026@gmail.com</div></div></a>
-      <div class="contact-card"><div class="contact-icon" style="background:rgba(255,200,30,.15)">⏰</div><div><div class="contact-label">Atendimento</div><div class="contact-val">Seg–Sáb, 9h–20h</div></div></div>
+<!-- PAINEL ADMIN -->
+<div id="adminPanel" class="admin-panel">
+    <div class="admin-header">
+        <div class="logo">⚙️ PAINEL <span>GUGA IPHONES</span></div>
+        <div class="admin-tabs" id="adminTabs"></div>
+        <button class="admin-btn" onclick="closeAdminPanel()">❌ Fechar</button>
     </div>
-  </div>
-</section>
+    <div id="adminSections"></div>
+</div>
 
-<footer><p>© 2026 <strong>GUGA STORE</strong> · Todos os direitos reservados</p><p style="margin-top:5px">WhatsApp: <strong>(21) 96751-9632</strong> · Frete para todo Brasil</p></footer>
-
-<a class="float-wa" href="https://wa.me/5521967519632" target="_blank">💬</a>
-
-<div class="modal-overlay" id="modal" onclick="closeModal(event)"><div class="modal-sheet"><div class="modal-handle"></div><div class="modal-header"><div class="modal-title" id="modal-title">Detalhes</div><button class="modal-close" onclick="closeModal()">✕</button></div><div id="modal-body"></div></div></div>
-
-<div class="toast" id="toast"></div>
+<div id="toast" class="toast"></div>
 
 <script>
-'use strict';
-
-// ═══════════════════════════════════════════════════════════════════
-// 🔑 CONFIGURE SUAS CHAVES AQUI (substitua os valores)
-// ═══════════════════════════════════════════════════════════════════
-
-const IMGBB_API_KEY = '9bd992ebf86665062298438cc4bfe973';
-const JSONBIN_API_KEY = '$2a$10$eqsYzyzhWQRisqpMRtEJZetkhuMmcWwGXy6MWDneMK/pUvQf9gG4O';
-const IPHONES_BIN_ID = '69e7b84436566621a8d8e636';
-const PERFUMES_BIN_ID = '69e7b861856a6821895a36c3';
-const ELETRONICOS_BIN_ID = '69e7b89caaba8821972265f2';
-const WA = '5521967519632';
-const ADMIN_PASS = 'guga2026';
-
-// ═══════════════════════════════════════════════════════════════════
-// DADOS PADRÃO (FALLBACK)
-// ═══════════════════════════════════════════════════════════════════
-
-const DEFAULT_IPHONES = [
-  {id:'p1',model:'iPhone 16 Pro Max',storage:'256GB',price:9499,oldPrice:10999,condition:'Novo',highlight:true,color:'Titânio Natural',photos:[],specs:{Tela:'6.9"',Processador:'A18 Pro'},inbox:['iPhone','Cabo USB-C']},
-  {id:'p2',model:'iPhone 16 Pro',storage:'128GB',price:7799,oldPrice:8999,condition:'Novo',highlight:true,color:'Titânio Preto',photos:[],specs:{Tela:'6.3"',Processador:'A18 Pro'},inbox:['iPhone','Cabo USB-C']},
-  {id:'p3',model:'iPhone 15 Pro',storage:'256GB',price:6299,oldPrice:7499,condition:'Recondicionado',highlight:true,color:'Titânio Azul',photos:[],specs:{Tela:'6.1"',Processador:'A17 Pro'},inbox:['iPhone','Cabo USB-C']},
-  {id:'p4',model:'iPhone 15',storage:'128GB',price:4299,oldPrice:5199,condition:'Novo',highlight:false,color:'Preto',photos:[],specs:{Tela:'6.1"'},inbox:['iPhone','Cabo USB-C']},
-  {id:'p5',model:'iPhone 14 Pro',storage:'256GB',price:5199,oldPrice:6299,condition:'Recondicionado',highlight:false,color:'Roxo',photos:[],specs:{Tela:'6.1"'},inbox:['iPhone','Cabo Lightning']},
-  {id:'p6',model:'iPhone 13',storage:'128GB',price:2699,oldPrice:3299,condition:'Usado',highlight:false,color:'Meia-Noite',photos:[],specs:{Tela:'6.1"'},inbox:['iPhone','Cabo Lightning']}
-];
-
-const DEFAULT_PERFUMES = [
-  {id:'perf1',name:'212 Vip Black',brand:'internacional',gender:'masculino',price:289,oldPrice:399,marca:'Carolina Herrera',highlight:true,photo:'',volume:'100ml'},
-  {id:'perf2',name:'Malbec',brand:'boticario',gender:'masculino',price:159,oldPrice:229,marca:'Boticário',highlight:true,photo:'',volume:'100ml'},
-  {id:'perf3',name:'Luna',brand:'natura',gender:'feminino',price:129,oldPrice:189,marca:'Natura',highlight:true,photo:'',volume:'100ml'},
-  {id:'perf4',name:'Zaad',brand:'jequiti',gender:'masculino',price:79,oldPrice:129,marca:'Jequiti',highlight:false,photo:'',volume:'100ml'},
-  {id:'perf5',name:'Egeo Dolce Vita',brand:'boticario',gender:'feminino',price:119,oldPrice:179,marca:'Boticário',highlight:false,photo:'',volume:'100ml'},
-  {id:'perf6',name:'Flower',brand:'avon',gender:'feminino',price:89,oldPrice:139,marca:'Avon',highlight:false,photo:'',volume:'100ml'},
-  {id:'perf7',name:'Essencial',brand:'natura',gender:'unissex',price:189,oldPrice:259,marca:'Natura',highlight:true,photo:'',volume:'100ml'},
-  {id:'perf8',name:'212 VIP Men',brand:'internacional',gender:'masculino',price:329,oldPrice:459,marca:'Carolina Herrera',highlight:false,photo:'',volume:'100ml'}
-];
-
-const DEFAULT_ELETRONICOS = [
-  {id:'e1',name:'AirPods Pro 2',categoria:'fones',preco:1899,oldPreco:2299,marca:'Apple',destaque:true,photo:'',subcategoria:'Fones Bluetooth'},
-  {id:'e2',name:'Galaxy Buds 2 Pro',categoria:'fones',preco:899,oldPreco:1299,marca:'Samsung',destaque:true,photo:'',subcategoria:'Fones Bluetooth'},
-  {id:'e3',name:'QCY T13',categoria:'fones',preco:129,oldPreco:199,marca:'QCY',destaque:false,photo:'',subcategoria:'Fones Bluetooth'},
-  {id:'e4',name:'Carregador USB-C 20W',categoria:'carregadores',preco:149,oldPreco:199,marca:'Apple',destaque:true,photo:'',subcategoria:'Carregadores'},
-  {id:'e5',name:'Power Bank 20000mAh',categoria:'carregadores',preco:129,oldPreco:189,marca:'Baseus',destaque:false,photo:'',subcategoria:'Power Bank'},
-  {id:'e6',name:'Capa Silicone MagSafe',categoria:'capas',preco:129,oldPreco:199,marca:'Apple',destaque:true,photo:'',subcategoria:'Capas iPhone'},
-  {id:'e7',name:'Capa Transparente',categoria:'capas',preco:49,oldPreco:89,marca:'Generic',destaque:false,photo:'',subcategoria:'Capas Universais'},
-  {id:'e8',name:'Apple Watch Series 9',categoria:'smartwatches',preco:3499,oldPreco:4299,marca:'Apple',destaque:true,photo:'',subcategoria:'Smartwatches'},
-  {id:'e9',name:'Galaxy Watch 6',categoria:'smartwatches',preco:1599,oldPreco:2099,marca:'Samsung',destaque:false,photo:'',subcategoria:'Smartwatches'},
-  {id:'e10',name:'JBL Flip 6',categoria:'caixas-som',preco:699,oldPreco:899,marca:'JBL',destaque:true,photo:'',subcategoria:'Caixas de Som'},
-  {id:'e11',name:'Sony XB100',categoria:'caixas-som',preco:449,oldPreco:599,marca:'Sony',destaque:false,photo:'',subcategoria:'Caixas de Som'}
-];
-
-// ═══════════════════════════════════════════════════════════════════
-// STORAGE COM JSONBIN
-// ═══════════════════════════════════════════════════════════════════
-
-async function loadData(binId, defaultData) {
-  try {
-    const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
-      headers: { 'X-Master-Key': JSONBIN_API_KEY }
-    });
-    const data = await response.json();
-    if (data.record && Array.isArray(data.record) && data.record.length) return data.record;
-  } catch(e) { console.log('Erro ao carregar:', e); }
-  return JSON.parse(JSON.stringify(defaultData));
-}
-
-async function saveData(binId, data) {
-  try {
-    await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_API_KEY },
-      body: JSON.stringify(data)
-    });
-    return true;
-  } catch(e) { console.log('Erro ao salvar:', e); return false; }
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// UPLOAD IMGBB
-// ═══════════════════════════════════════════════════════════════════
-
-async function uploadParaImgBB(file) {
-  return new Promise((resolve, reject) => {
-    const formData = new FormData();
-    formData.append('image', file);
-    formData.append('key', IMGBB_API_KEY);
-    fetch('https://api.imgbb.com/1/upload', { method: 'POST', body: formData })
-      .then(r => r.json())
-      .then(data => { if(data.success) resolve(data.data.url); else reject(data.error?.message); })
-      .catch(reject);
-  });
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// HELPERS
-// ═══════════════════════════════════════════════════════════════════
-
-const fmt = v => 'R$ ' + Number(v).toLocaleString('pt-BR');
-const uid = () => 'p' + Date.now() + Math.random().toString(36).slice(2,6);
-const getInstallment = (price) => `12x de ${fmt(price/12)}`;
-let cupomAtivo = false, descontoCupom = 0;
-
-function toast(msg, type='success') {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = `toast ${type} show`;
-  setTimeout(() => t.classList.remove('show'), 2500);
-}
-
-function paymentBadge() { return `<div class="payment-badge"><span>💳 Cartão (até 12x)</span><span>📱 Pix (10% off)</span><span>📄 Boleto</span></div>`; }
-
-function aplicarCupom() {
-  const cupom = document.getElementById('cupom-input').value.toUpperCase();
-  if(cupom === 'PIX10') { cupomAtivo = true; descontoCupom = 0.1; document.getElementById('cupom-result').innerHTML = '✅ Cupom PIX10 aplicado! 10% de desconto no Pix.'; toast('Cupom aplicado! 10% off', 'success'); }
-  else { cupomAtivo = false; descontoCupom = 0; document.getElementById('cupom-result').innerHTML = '❌ Cupom inválido. Tente PIX10'; toast('Cupom inválido', 'error'); }
-}
-
-function formatarCEP(input) { let cep = input.value.replace(/\D/g,''); if(cep.length>5) cep = cep.replace(/^(\d{5})(\d{1,3})/,'$1-$2'); input.value=cep; }
-
-async function calcularFrete() {
-  const cep = document.getElementById('cep-destino').value.replace(/\D/g,'');
-  if(cep.length!==8){ toast('Digite um CEP válido','error'); return; }
-  toast('Calculando frete...','info');
-  try{
-    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const data = await response.json();
-    if(data.erro){ toast('CEP não encontrado','error'); return; }
-    const freteNormal = Math.floor(Math.random()*30)+15;
-    const freteExpresso = freteNormal+10;
-    document.getElementById('resultado-frete').innerHTML = `<div><p>📍 ${data.logradouro||''}, ${data.localidade||''} - ${data.uf||''}</p><div style="display:flex; gap:15px; flex-wrap:wrap;"><div>🚚 PAC: ${fmt(freteNormal)} (5-10 dias)</div><div>⚡ SEDEX: ${fmt(freteExpresso)} (1-3 dias)</div></div>${cupomAtivo?'<p style="color:var(--green);">💰 Pix com 10% off + frete grátis!</p>':'<p>💰 Compre com PIX e ganhe 10% de desconto</p>'}</div>`;
-    document.getElementById('resultado-frete').style.display='block';
-  } catch(e){ toast('Erro ao calcular frete','error'); }
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// RENDER CARDS
-// ═══════════════════════════════════════════════════════════════════
-
-function renderIphoneCard(p) {
-  const save = p.oldPrice ? p.oldPrice - p.price : 0;
-  return `<div class="product-card"><div class="card-img"><div class="card-badges"><span class="badge badge-blue">${p.condition}</span></div>${p.photos && p.photos.length ? `<img src="${p.photos[0]}">` : '📱'}</div><div class="card-body"><div class="card-model">${p.model}</div><div class="card-storage">${p.storage}${p.color ? ' · '+p.color : ''}</div><div class="card-price">${p.oldPrice ? `<div class="price-old">${fmt(p.oldPrice)}</div>` : ''}<div class="price-current">${fmt(p.price)}</div>${save>0 ? `<div class="price-save">💰 Economize ${fmt(save)}</div>` : ''}</div><div class="installment">📦 ${getInstallment(p.price)}</div>${paymentBadge()}<div class="card-actions"><a class="btn-whatsapp" href="https://wa.me/${WA}?text=${encodeURIComponent(`Olá! Tenho interesse no iPhone ${p.model} - ${p.storage}\nPreço: ${fmt(p.price)}`)}" target="_blank">💬 Comprar</a><button class="btn-details" onclick="openIphoneModal('${p.id}')">Ver</button></div></div></div>`;
-}
-
-function renderPerfumeCard(p) {
-  const save = p.oldPrice ? p.oldPrice - p.price : 0;
-  const generoIcon = p.gender === 'masculino' ? '👨' : (p.gender === 'feminino' ? '👩' : '🔄');
-  const brandClass = p.brand === 'internacional' ? 'badge-pink' : 'badge-green';
-  return `<div class="product-card"><div class="card-img"><div class="card-badges"><span class="badge ${brandClass}">${p.brand === 'internacional' ? '✨ Importado' : p.marca}</span><span class="badge badge-gray">${generoIcon}</span></div>${p.photo ? `<img src="${p.photo}">` : '🧴'}</div><div class="card-body"><div class="card-model">${p.name}</div><div class="card-storage">${p.marca} · ${p.volume||'100ml'}</div><div class="card-price">${p.oldPrice ? `<div class="price-old">${fmt(p.oldPrice)}</div>` : ''}<div class="price-current">${fmt(p.price)}</div>${save>0 ? `<div class="price-save">💰 Economize ${fmt(save)}</div>` : ''}</div><div class="installment">📦 ${getInstallment(p.price)}</div>${paymentBadge()}<div class="card-actions"><a class="btn-whatsapp" href="https://wa.me/${WA}?text=${encodeURIComponent(`Olá! Tenho interesse no perfume ${p.name}\nPreço: ${fmt(p.price)}`)}" target="_blank">💬 Comprar</a><button class="btn-details" onclick="openPerfumeModal('${p.id}')">Ver</button></div></div></div>`;
-}
-
-function renderEletronicoCard(p) {
-  const save = p.oldPreco ? p.oldPreco - p.preco : 0;
-  const categoriaIcon = {fones:'🎧',carregadores:'🔌',capas:'📱',smartwatches:'⌚','caixas-som':'🔊'}[p.categoria] || '📦';
-  const categoriaNome = {fones:'Fones',carregadores:'Carregadores',capas:'Capas',smartwatches:'Smartwatches','caixas-som':'Caixas de Som'}[p.categoria] || p.categoria;
-  return `<div class="product-card"><div class="card-img"><div class="card-badges"><span class="badge badge-purple">${categoriaIcon} ${categoriaNome}</span></div>${p.photo ? `<img src="${p.photo}">` : categoriaIcon}</div><div class="card-body"><div class="card-model">${p.name}</div><div class="card-storage">${p.marca}</div><div class="card-price">${p.oldPreco ? `<div class="price-old">${fmt(p.oldPreco)}</div>` : ''}<div class="price-current">${fmt(p.preco)}</div>${save>0 ? `<div class="price-save">💰 Economize ${fmt(save)}</div>` : ''}</div><div class="installment">📦 ${getInstallment(p.preco)}</div>${paymentBadge()}<div class="card-actions"><a class="btn-whatsapp" href="https://wa.me/${WA}?text=${encodeURIComponent(`Olá! Tenho interesse no produto ${p.name}\nPreço: ${fmt(p.preco)}`)}" target="_blank">💬 Comprar</a><button class="btn-details" onclick="openEletronicoModal('${p.id}')">Ver</button></div></div></div>`;
-}
-
-// ═══════════════════════════════════════════════════════════════════
-// FILTERS
-// ═══════════════════════════════════════════════════════════════════
-
-let iphonesCache = [], perfumesCache = [], eletronicosCache = [];
-
-async function filterIphones() {
-  const search = document.getElementById('search-iphone').value.toLowerCase();
-  const storage = document.getElementById('filter-storage-iphone').value;
-  const maxPrice = parseFloat(document.getElementById('filter-price-iphone').value);
-  let f = iphonesCache.filter(p => {
-    const matchSearch = !search || p.model.toLowerCase().includes(search);
-    const matchStorage = !storage || p.storage === storage;
-    const matchPrice = !maxPrice || p.price <= maxPrice;
-    return matchSearch && matchStorage && matchPrice;
-  });
-  document.getElementById('iphone-grid').innerHTML = f.length ? f.map(renderIphoneCard).join('') : '<div class="no-results">🔍 Nenhum iPhone encontrado</div>';
-  document.getElementById('iphone-count').innerHTML = `Mostrando <strong>${f.length}</strong> iPhone${f.length!==1?'s':''}`;
-}
-
-async function filterPerfumes() {
-  const search = document.getElementById('search-perfume').value.toLowerCase();
-  const gender = document.getElementById('filter-genero').value;
-  const brand = document.getElementById('filter-marca').value;
-  const maxPrice = parseFloat(document.getElementById('filter-price-perfume').value);
-  let f = perfumesCache.filter(p => {
-    const matchSearch = !search || p.name.toLowerCase().includes(search) || p.marca.toLowerCase().includes(search);
-    const matchGender = !gender || p.gender === gender;
-    const matchBrand = !brand || p.brand === brand;
-    const matchPrice = !maxPrice || p.price <= maxPrice;
-    return matchSearch && matchGender && matchBrand && matchPrice;
-  });
-  document.getElementById('perfume-grid').innerHTML = f.length ? f.map(renderPerfumeCard).join('') : '<div class="no-results">✨ Nenhum perfume encontrado</div>';
-  document.getElementById('perfume-count').innerHTML = `Mostrando <strong>${f.length}</strong> perfume${f.length!==1?'s':''}`;
-}
-
-async function filterEletronicos() {
-  const search = document.getElementById('search-eletronico').value.toLowerCase();
-  const categoria = document.getElementById('filter-categoria').value;
-  const maxPrice = parseFloat(document.getElementById('filter-price-eletronico').value);
-  let f = eletronicosCache.filter(p => {
-    const matchSearch = !search || p.name.toLowerCase().includes(search) || p.marca.toLowerCase().includes(search);
-    const matchCategoria = !categoria || p.categoria === categoria;
-    const matchPrice = !maxPrice || p.preco <= maxPrice;
-    return matchSearch && matchCategoria && matchPrice;
-  });
-  document.getElementById('eletronico-grid').innerHTML = f.length ? f.map(renderEletronicoCard).join('') : '<div class="no-results">🎧 Nenhum produto encontrado</div>';
-  document.getElementById('eletronico-count').innerHTML = `Mostrando <strong>${f.length}</strong> produto${f.length!==1?'s':''}`;
-}
-
-function clearIphoneFilters() { document.getElementById('search-iphone').value=''; document.getElementById('filter-storage-iphone').selectedIndex=0; document.getElementById('filter-price-iphone').selectedIndex=0; filterIphones(); }
-function clearPerfumeFilters() { document.getElementById('search-perfume').value=''; document.getElementById('filter-genero').selectedIndex=0; document.getElementById('filter-marca').selectedIndex=0; document.getElementById('filter-price-perfume').selectedIndex=0; filterPerfumes(); }
-function clearEletronicoFilters() { document.getElementById('search-eletronico').value=''; document.getElementById('filter-categoria').selectedIndex=0; document.getElementById('filter-price-eletronico').selectedIndex=0; filterEletronicos(); }
-
-// ═══════════════════════════════════════════════════════════════════
-// MODALS
-// ═══════════════════════════════════════════════════════════════════
-
-function openIphoneModal(id) { const p = iphonesCache.find(x=>x.id===id); if(!p) return; document.getElementById('modal-title').textContent = p.model; document.getElementById('modal-body').innerHTML = `<div class="modal-content"><div class="modal-price">${fmt(p.price)}</div><div class="installment">${getInstallment(p.price)}</div>${paymentBadge()}<p><strong>Condição:</strong> ${p.condition}</p><p><strong>Acompanha:</strong> ${p.inbox?.join(', ')||''}</p><a class="modal-buy-btn" href="https://wa.me/${WA}?text=${encodeURIComponent(`Olá! Tenho interesse no iPhone ${p.model}`)}" target="_blank">💬 Comprar via WhatsApp</a></div>`; document.getElementById('modal').classList.add('open'); document.body.style.overflow='hidden'; }
-function openPerfumeModal(id) { const p = perfumesCache.find(x=>x.id===id); if(!p) return; document.getElementById('modal-title').textContent = p.name; document.getElementById('modal-body').innerHTML = `<div class="modal-content"><div class="modal-price">${fmt(p.price)}</div><div class="installment">${getInstallment(p.price)}</div>${paymentBadge()}<p><strong>Marca:</strong> ${p.marca}</p><p><strong>Volume:</strong> ${p.volume||'100ml'}</p><a class="modal-buy-btn" href="https://wa.me/${WA}?text=${encodeURIComponent(`Olá! Tenho interesse no perfume ${p.name}`)}" target="_blank">💬 Comprar via WhatsApp</a></div>`; document.getElementById('modal').classList.add('open'); document.body.style.overflow='hidden'; }
-function openEletronicoModal(id) { const p = eletronicosCache.find(x=>x.id===id); if(!p) return; document.getElementById('modal-title').textContent = p.name; document.getElementById('modal-body').innerHTML = `<div class="modal-content"><div class="modal-price">${fmt(p.preco)}</div><div class="installment">${getInstallment(p.preco)}</div>${paymentBadge()}<p><strong>Marca:</strong> ${p.marca}</p><p><strong>Categoria:</strong> ${p.categoria}</p><a class="modal-buy-btn" href="https://wa.me/${WA}?text=${encodeURIComponent(`Olá! Tenho interesse no produto ${p.name}`)}" target="_blank">💬 Comprar via WhatsApp</a></div>`; document.getElementById('modal').classList.add('open'); document.body.style.overflow='hidden'; }
-function closeModal(e) { if(e && e.target !== document.getElementById('modal')) return; document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
-
-// ═══════════════════════════════════════════════════════════════════
-// ADMIN
-// ═══════════════════════════════════════════════════════════════════
-
-function openAdminLogin() { document.getElementById('admin-login').classList.add('open'); document.getElementById('admin-password').focus(); }
-function closeAdminLogin() { document.getElementById('admin-login').classList.remove('open'); }
-function doLogin() { const pw = document.getElementById('admin-password').value; if(pw===ADMIN_PASS) { closeAdminLogin(); openAdminPanel(); } else { toast('Senha incorreta','error'); } }
-
-let editIphoneId=null, editPerfumeId=null, editEletronicoId=null;
-
-function openAdminPanel() { document.getElementById('admin-panel').classList.add('open'); document.body.style.overflow='hidden'; refreshAdminStats(); renderAdminIphones(); renderAdminPerfumes(); renderAdminEletronicos(); }
-function closeAdminPanel() { document.getElementById('admin-panel').classList.remove('open'); document.body.style.overflow=''; filterIphones(); filterPerfumes(); filterEletronicos(); }
-function switchTab(name,btn) { document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active')); document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active')); document.getElementById('tab-'+name).classList.add('active'); if(btn) btn.classList.add('active'); if(name==='manage-iphones') renderAdminIphones(); if(name==='manage-perfumes') renderAdminPerfumes(); if(name==='manage-eletronicos') renderAdminEletronicos(); if(name==='dashboard') refreshAdminStats(); }
-function refreshAdminStats() { document.getElementById('admin-stats-grid').innerHTML = `<div class="admin-stat"><div class="stat-label">iPhones</div><div class="stat-val">${iphonesCache.length}</div></div><div class="admin-stat"><div class="stat-label">Perfumes</div><div class="stat-val">${perfumesCache.length}</div></div><div class="admin-stat"><div class="stat-label">Eletrônicos</div><div class="stat-val">${eletronicosCache.length}</div></div><div class="admin-stat"><div class="stat-label">Total</div><div class="stat-val">${iphonesCache.length+perfumesCache.length+eletronicosCache.length}</div></div>`; }
-function renderAdminIphones() { const list=document.getElementById('admin-iphone-list'); if(!iphonesCache.length){list.innerHTML='<div class="admin-empty">📭 Nenhum iPhone</div>';return;} list.innerHTML=iphonesCache.map(x=>`<div class="admin-product-row"><div class="apl-img">📱</div><div class="apl-info"><div class="apl-name">${x.model} ${x.storage}</div><div class="apl-meta">${x.condition}</div></div><div class="apl-price">${fmt(x.price)}</div><div class="apl-actions"><button class="btn-edit" onclick="editIphone('${x.id}')">✏️</button><button class="btn-del" onclick="delIphone('${x.id}')">🗑️</button></div></div>`).join(''); }
-function renderAdminPerfumes() { const list=document.getElementById('admin-perfume-list'); if(!perfumesCache.length){list.innerHTML='<div class="admin-empty">✨ Nenhum perfume</div>';return;} list.innerHTML=perfumesCache.map(x=>`<div class="admin-product-row"><div class="apl-img">🧴</div><div class="apl-info"><div class="apl-name">${x.name}</div><div class="apl-meta">${x.marca} · ${x.gender}</div></div><div class="apl-price">${fmt(x.price)}</div><div class="apl-actions"><button class="btn-edit" onclick="editPerfume('${x.id}')">✏️</button><button class="btn-del" onclick="delPerfume('${x.id}')">🗑️</button></div></div>`).join(''); }
-function renderAdminEletronicos() { const list=document.getElementById('admin-eletronico-list'); if(!eletronicosCache.length){list.innerHTML='<div class="admin-empty">🎧 Nenhum produto</div>';return;} list.innerHTML=eletronicosCache.map(x=>`<div class="admin-product-row"><div class="apl-img">${x.categoria==='fones'?'🎧':x.categoria==='carregadores'?'🔌':x.categoria==='capas'?'📱':x.categoria==='smartwatches'?'⌚':'🔊'}</div><div class="apl-info"><div class="apl-name">${x.name}</div><div class="apl-meta">${x.marca}</div></div><div class="apl-price">${fmt(x.preco)}</div><div class="apl-actions"><button class="btn-edit" onclick="editEletronico('${x.id}')">✏️</button><button class="btn-del" onclick="delEletronico('${x.id}')">🗑️</button></div></div>`).join(''); }
-async function delIphone(id) { if(!confirm('Excluir?'))return; iphonesCache = iphonesCache.filter(x=>x.id!==id); await saveData(IPHONES_BIN_ID, iphonesCache); renderAdminIphones(); refreshAdminStats(); filterIphones(); toast('iPhone excluído'); }
-async function delPerfume(id) { if(!confirm('Excluir?'))return; perfumesCache = perfumesCache.filter(x=>x.id!==id); await saveData(PERFUMES_BIN_ID, perfumesCache); renderAdminPerfumes(); refreshAdminStats(); filterPerfumes(); toast('Perfume excluído'); }
-async function delEletronico(id) { if(!confirm('Excluir?'))return; eletronicosCache = eletronicosCache.filter(x=>x.id!==id); await saveData(ELETRONICOS_BIN_ID, eletronicosCache); renderAdminEletronicos(); refreshAdminStats(); filterEletronicos(); toast('Produto excluído'); }
-function editIphone(id) { const p=iphonesCache.find(x=>x.id===id); if(!p)return; switchTab('add-iphone',document.getElementById('tab-btn-add-iphone')); editIphoneId=id; document.getElementById('iphone-form-title').textContent='Editar iPhone'; document.getElementById('i-model').value=p.model; document.getElementById('i-storage').value=p.storage; document.getElementById('i-price').value=p.price; document.getElementById('i-old-price').value=p.oldPrice||''; document.getElementById('i-condition').value=p.condition; }
-function editPerfume(id) { const p=perfumesCache.find(x=>x.id===id); if(!p)return; switchTab('add-perfume',document.getElementById('tab-btn-add-perfume')); editPerfumeId=id; document.getElementById('perfume-form-title').textContent='Editar Perfume'; document.getElementById('f-name').value=p.name; document.getElementById('f-brand').value=p.brand; document.getElementById('f-gender').value=p.gender; document.getElementById('f-price').value=p.price; document.getElementById('f-old-price').value=p.oldPrice||''; document.getElementById('f-marca').value=p.marca; }
-function editEletronico(id) { const p=eletronicosCache.find(x=>x.id===id); if(!p)return; switchTab('add-eletronico',document.getElementById('tab-btn-add-eletronico')); editEletronicoId=id; document.getElementById('eletronico-form-title').textContent='Editar Produto'; document.getElementById('e-name').value=p.name; document.getElementById('e-categoria').value=p.categoria; document.getElementById('e-marca').value=p.marca; document.getElementById('e-price').value=p.preco; document.getElementById('e-old-price').value=p.oldPreco||''; }
-function cancelIphoneEdit() { editIphoneId=null; document.getElementById('iphone-form-title').textContent='Novo iPhone'; document.getElementById('i-model').value=''; document.getElementById('i-storage').selectedIndex=0; document.getElementById('i-price').value=''; document.getElementById('i-old-price').value=''; document.getElementById('i-condition').selectedIndex=0; switchTab('manage-iphones',document.getElementById('tab-btn-manage-iphones')); }
-function cancelPerfumeEdit() { editPerfumeId=null; document.getElementById('perfume-form-title').textContent='Novo Perfume'; document.getElementById('f-name').value=''; document.getElementById('f-brand').selectedIndex=0; document.getElementById('f-gender').selectedIndex=0; document.getElementById('f-price').value=''; document.getElementById('f-old-price').value=''; document.getElementById('f-marca').value=''; switchTab('manage-perfumes',document.getElementById('tab-btn-manage-perfumes')); }
-function cancelEletronicoEdit() { editEletronicoId=null; document.getElementById('eletronico-form-title').textContent='Novo Produto'; document.getElementById('e-name').value=''; document.getElementById('e-categoria').selectedIndex=0; document.getElementById('e-marca').value=''; document.getElementById('e-price').value=''; document.getElementById('e-old-price').value=''; switchTab('manage-eletronicos',document.getElementById('tab-btn-manage-eletronicos')); }
-async function saveIphone() { const model=document.getElementById('i-model').value.trim(); const price=parseFloat(document.getElementById('i-price').value); if(!model||isNaN(price)){toast('Preencha modelo e preço','error');return;} const data={model,price,oldPrice:parseFloat(document.getElementById('i-old-price').value)||null,storage:document.getElementById('i-storage').value,condition:document.getElementById('i-condition').value,highlight:false,color:'',photos:[],specs:{},inbox:[]}; if(editIphoneId){const i=iphonesCache.findIndex(x=>x.id===editIphoneId);if(i>-1)iphonesCache[i]={...iphonesCache[i],...data};toast('iPhone atualizado');}else{data.id=uid();iphonesCache.push(data);toast('iPhone adicionado');} await saveData(IPHONES_BIN_ID, iphonesCache); cancelIphoneEdit(); renderAdminIphones(); refreshAdminStats(); filterIphones(); }
-async function savePerfume() { const name=document.getElementById('f-name').value.trim(); const price=parseFloat(document.getElementById('f-price').value); if(!name||isNaN(price)){toast('Preencha nome e preço','error');return;} const data={name,price,oldPrice:parseFloat(document.getElementById('f-old-price').value)||null,brand:document.getElementById('f-brand').value,gender:document.getElementById('f-gender').value,marca:document.getElementById('f-marca').value,highlight:false,photo:'',volume:'100ml'}; if(editPerfumeId){const i=perfumesCache.findIndex(x=>x.id===editPerfumeId);if(i>-1)perfumesCache[i]={...perfumesCache[i],...data};toast('Perfume atualizado');}else{data.id='perf'+Date.now();perfumesCache.push(data);toast('Perfume adicionado');} await saveData(PERFUMES_BIN_ID, perfumesCache); cancelPerfumeEdit(); renderAdminPerfumes(); refreshAdminStats(); filterPerfumes(); }
-async function saveEletronico() { const name=document.getElementById('e-name').value.trim(); const price=parseFloat(document.getElementById('e-price').value); if(!name||isNaN(price)){toast('Preencha nome e preço','error');return;} const data={name,preco:price,oldPreco:parseFloat(document.getElementById('e-old-price').value)||null,categoria:document.getElementById('e-categoria').value,marca:document.getElementById('e-marca').value,destaque:false,photo:'',subcategoria:''}; if(editEletronicoId){const i=eletronicosCache.findIndex(x=>x.id===editEletronicoId);if(i>-1)eletronicosCache[i]={...eletronicosCache[i],...data};toast('Produto atualizado');}else{data.id='e'+Date.now();eletronicosCache.push(data);toast('Produto adicionado');} await saveData(ELETRONICOS_BIN_ID, eletronicosCache); cancelEletronicoEdit(); renderAdminEletronicos(); refreshAdminStats(); filterEletronicos(); }
-
-// ═══════════════════════════════════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════════════════════════════════
-
-async function init() {
-  iphonesCache = await loadData(IPHONES_BIN_ID, DEFAULT_IPHONES);
-  perfumesCache = await loadData(PERFUMES_BIN_ID, DEFAULT_PERFUMES);
-  eletronicosCache = await loadData(ELETRONICOS_BIN_ID, DEFAULT_ELETRONICOS);
-  filterIphones();
-  filterPerfumes();
-  filterEletronicos();
-}
-init();
-
-// ADMIN HTML
-document.body.insertAdjacentHTML('beforeend', `
-<div class="admin-login-overlay" id="admin-login" style="position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s"><div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px;width:100%;max-width:350px;text-align:center"><div style="font-size:2rem">🔐</div><h2>Área Admin</h2><p style="color:var(--text2);margin-bottom:20px">Digite a senha</p><input type="password" id="admin-password" style="width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:10px;margin-bottom:16px" placeholder="Senha..."><button onclick="doLogin()" style="width:100%;background:linear-gradient(135deg,var(--blue2),var(--cyan));color:#fff;border:none;padding:10px;border-radius:10px;font-weight:700;cursor:pointer">Entrar</button><button onclick="closeAdminLogin()" style="margin-top:12px;background:transparent;border:none;color:var(--text2);cursor:pointer">Cancelar</button></div></div>
-<div class="admin-panel" id="admin-panel"><div class="admin-topbar"><div class="admin-topbar-inner"><div class="admin-logo">⚙️ Painel <span>Admin</span></div><div class="admin-tabs"><button class="admin-tab active" id="tab-btn-dashboard" onclick="switchTab('dashboard',this)">📊 Dashboard</button><button class="admin-tab" id="tab-btn-add-iphone" onclick="switchTab('add-iphone',this)">📱 iPhone</button><button class="admin-tab" id="tab-btn-manage-iphones" onclick="switchTab('manage-iphones',this)">📋 iPhones</button><button class="admin-tab" id="tab-btn-add-perfume" onclick="switchTab('add-perfume',this)">✨ Perfume</button><button class="admin-tab" id="tab-btn-manage-perfumes" onclick="switchTab('manage-perfumes',this)">📋 Perfumes</button><button class="admin-tab" id="tab-btn-add-eletronico" onclick="switchTab('add-eletronico',this)">🎧 Eletrônico</button><button class="admin-tab" id="tab-btn-manage-eletronicos" onclick="switchTab('manage-eletronicos',this)">📋 Eletrônicos</button></div><button class="admin-close-btn" onclick="closeAdminPanel()">✕ Sair</button></div></div><div class="admin-body"><div class="admin-section active" id="tab-dashboard"><div class="admin-stats" id="admin-stats-grid"></div><div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px"><strong style="color:var(--cyan)">👋 Bem-vindo!</strong><br>Gerencie iPhones, Perfumes e Eletrônicos.<br><span style="color:var(--green)">✅ Dados salvos no JSONBin + Fotos no ImgBB</span></div></div>
-<div class="admin-section" id="tab-add-iphone"><div class="admin-form-card"><div class="admin-form-title">📱 <span id="iphone-form-title">Novo iPhone</span></div><div class="form-grid"><div class="form-group"><label>Modelo *</label><input type="text" id="i-model" placeholder="iPhone 15 Pro"></div><div class="form-group"><label>Armazenamento</label><select id="i-storage"><option value="128GB">128GB</option><option value="256GB">256GB</option><option value="512GB">512GB</option></select></div><div class="form-group"><label>Preço *</label><input type="number" id="i-price" placeholder="6299"></div><div class="form-group"><label>Preço antigo</label><input type="number" id="i-old-price" placeholder="7499"></div><div class="form-group"><label>Condição</label><select id="i-condition"><option value="Novo">Novo</option><option value="Recondicionado">Recondicionado</option><option value="Usado">Usado</option></select></div></div><div class="form-actions" style="display:flex;gap:10px;margin-top:20px"><button class="admin-save-btn" onclick="saveIphone()">💾 Salvar</button><button class="admin-cancel-btn" onclick="cancelIphoneEdit()">Cancelar</button></div></div></div>
-<div class="admin-section" id="tab-manage-iphones"><div style="display:flex;justify-content:space-between;margin-bottom:15px"><div style="font-weight:800">📋 iPhones</div><button class="admin-save-btn" onclick="switchTab('add-iphone',document.getElementById('tab-btn-add-iphone'))">➕ Novo</button></div><div class="admin-product-list" id="admin-iphone-list"></div></div>
-<div class="admin-section" id="tab-add-perfume"><div class="admin-form-card"><div class="admin-form-title">✨ <span id="perfume-form-title">Novo Perfume</span></div><div class="form-grid"><div class="form-group"><label>Nome *</label><input type="text" id="f-name" placeholder="212 Vip Black"></div><div class="form-group"><label>Marca *</label><input type="text" id="f-marca" placeholder="Carolina Herrera"></div><div class="form-group"><label>Categoria</label><select id="f-brand"><option value="natura">Natura</option><option value="boticario">Boticário</option><option value="avon">Avon</option><option value="jequiti">Jequiti</option><option value="internacional">Importado</option></select></div><div class="form-group"><label>Gênero</label><select id="f-gender"><option value="masculino">👨 Masculino</option><option value="feminino">👩 Feminino</option><option value="unissex">🔄 Unissex</option></select></div><div class="form-group"><label>Preço *</label><input type="number" id="f-price" placeholder="289"></div><div class="form-group"><label>Preço antigo</label><input type="number" id="f-old-price" placeholder="399"></div></div><div class="form-actions" style="display:flex;gap:10px;margin-top:20px"><button class="admin-save-btn" onclick="savePerfume()">💾 Salvar</button><button class="admin-cancel-btn" onclick="cancelPerfumeEdit()">Cancelar</button></div></div></div>
-<div class="admin-section" id="tab-manage-perfumes"><div style="display:flex;justify-content:space-between;margin-bottom:15px"><div style="font-weight:800">📋 Perfumes</div><button class="admin-save-btn" onclick="switchTab('add-perfume',document.getElementById('tab-btn-add-perfume'))">➕ Novo</button></div><div class="admin-product-list" id="admin-perfume-list"></div></div>
-<div class="admin-section" id="tab-add-eletronico"><div class="admin-form-card"><div class="admin-form-title">🎧 <span id="eletronico-form-title">Novo Produto</span></div><div class="form-grid"><div class="form-group"><label>Nome *</label><input type="text" id="e-name" placeholder="AirPods Pro 2"></div><div class="form-group"><label>Categoria</label><select id="e-categoria"><option value="fones">🎧 Fones</option><option value="carregadores">🔌 Carregadores</option><option value="capas">📱 Capas</option><option value="smartwatches">⌚ Smartwatches</option><option value="caixas-som">🔊 Caixas de Som</option></select></div><div class="form-group"><label>Marca</label><input type="text" id="e-marca" placeholder="Apple"></div><div class="form-group"><label>Preço *</label><input type="number" id="e-price" placeholder="1899"></div><div class="form-group"><label>Preço antigo</label><input type="number" id="e-old-price" placeholder="2299"></div></div><div class="form-actions" style="display:flex;gap:10px;margin-top:20px"><button class="admin-save-btn" onclick="saveEletronico()">💾 Salvar</button><button class="admin-cancel-btn" onclick="cancelEletronicoEdit()">Cancelar</button></div></div></div>
-<div class="admin-section" id="tab-manage-eletronicos"><div style="display:flex;justify-content:space-between;margin-bottom:15px"><div style="font-weight:800">📋 Eletrônicos</div><button class="admin-save-btn" onclick="switchTab('add-eletronico',document.getElementById('tab-btn-add-eletronico'))">➕ Novo</button></div><div class="admin-product-list" id="admin-eletronico-list"></div></div></div></div>
-`);
+    // ==================== CONFIGURAÇÕES (COLE SUAS CHAVES AQUI) ====================
+    const JSONBIN_API_KEY = '$2a$10$eqsYzyzhWQRisqpMRtEJZetkhuMmcWwGXy6MWDneMK/pUvQf9gG4O';      // ← sua chave do JSONBin
+    const IMGBB_API_KEY = '9bd992ebf86665062298438cc4bfe973';          // ← sua chave do ImgBB
+    const IPHONES_BIN_ID = '69e7b84436566621a8d8e636';        // ← ID do bin de iPhones
+    const PERFUMES_BIN_ID = '69e7b861856a6821895a36c3';      // ← ID do bin de Perfumes
+    const ELETRONICOS_BIN_ID = '69e7b89caaba8821972265f2'; // ← ID do bin de Eletrônicos
+    
+    const ADMIN_PASS = 'batima2026';
+    const WHATSAPP_NUMBER = '5521967519632';
+    
+    // ==================== DADOS ====================
+    let currentCategory = 'iphones';
+    let products = { iphones: [], perfumes: [], eletronicos: [] };
+    
+    // Dados padrão
+    const defaultData = {
+        iphones: [
+            { id: '1', nome: 'iPhone 16 Pro Max', armazenamento: '256GB', preco: 9499, precoAntigo: 10999, condicao: 'Novo', cor: 'Titânio Natural', foto: '' },
+            { id: '2', nome: 'iPhone 16 Pro', armazenamento: '128GB', preco: 7799, precoAntigo: 8999, condicao: 'Novo', cor: 'Titânio Preto', foto: '' },
+            { id: '3', nome: 'iPhone 15 Pro', armazenamento: '256GB', preco: 6299, precoAntigo: 7499, condicao: 'Recondicionado', cor: 'Azul', foto: '' }
+        ],
+        perfumes: [
+            { id: 'p1', nome: '212 Vip Black', marca: 'Carolina Herrera', genero: 'masculino', preco: 289, precoAntigo: 399, volume: '100ml', foto: '' },
+            { id: 'p2', nome: 'Malbec', marca: 'Boticário', genero: 'masculino', preco: 159, precoAntigo: 229, volume: '100ml', foto: '' },
+            { id: 'p3', nome: 'Luna', marca: 'Natura', genero: 'feminino', preco: 129, precoAntigo: 189, volume: '100ml', foto: '' }
+        ],
+        eletronicos: [
+            { id: 'e1', nome: 'AirPods Pro 2', categoria: 'fones', marca: 'Apple', preco: 1899, precoAntigo: 2299, foto: '' },
+            { id: 'e2', nome: 'Carregador USB-C 20W', categoria: 'carregadores', marca: 'Apple', preco: 149, precoAntigo: 199, foto: '' },
+            { id: 'e3', nome: 'Capa Silicone MagSafe', categoria: 'capas', marca: 'Apple', preco: 129, precoAntigo: 199, foto: '' }
+        ]
+    };
+    
+    // ==================== FUNÇÕES DE BANCO ====================
+    async function loadData() {
+        const bins = { iphones: IPHONES_BIN_ID, perfumes: PERFUMES_BIN_ID, eletronicos: ELETRONICOS_BIN_ID };
+        for (const [cat, binId] of Object.entries(bins)) {
+            try {
+                const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+                    headers: { 'X-Master-Key': JSONBIN_API_KEY }
+                });
+                const data = await res.json();
+                if (data.record && Array.isArray(data.record) && data.record.length) {
+                    products[cat] = data.record;
+                } else {
+                    products[cat] = defaultData[cat];
+                }
+            } catch(e) { products[cat] = defaultData[cat]; }
+        }
+        renderCurrentCategory();
+    }
+    
+    async function saveCategory(cat) {
+        try {
+            const binId = cat === 'iphones' ? IPHONES_BIN_ID : (cat === 'perfumes' ? PERFUMES_BIN_ID : ELETRONICOS_BIN_ID);
+            await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_API_KEY },
+                body: JSON.stringify(products[cat])
+            });
+            return true;
+        } catch(e) { return false; }
+    }
+    
+    // ==================== UPLOAD IMAGEM ====================
+    async function uploadToImgBB(file) {
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('key', IMGBB_API_KEY);
+        const res = await fetch('https://api.imgbb.com/1/upload', { method: 'POST', body: formData });
+        const data = await res.json();
+        if (data.success) return data.data.url;
+        throw new Error('Falha no upload');
+    }
+    
+    // ==================== RENDER LOJA ====================
+    function formatPrice(v) { return `R$ ${v.toLocaleString('pt-BR')}`; }
+    
+    function getInstallment(price) { return `12x de ${formatPrice(price/12)}`; }
+    
+    function renderCurrentCategory() {
+        const items = products[currentCategory];
+        const grid = document.getElementById('productsGrid');
+        const filtersDiv = document.getElementById('filtersContainer');
+        
+        // Filtros dinâmicos por categoria
+        if (currentCategory === 'iphones') {
+            filtersDiv.innerHTML = `
+                <input type="text" id="searchInput" placeholder="🔍 Buscar iPhone..." onkeyup="filterProducts()">
+                <select id="storageFilter" onchange="filterProducts()"><option value="">Todos</option><option value="128GB">128GB</option><option value="256GB">256GB</option><option value="512GB">512GB</option></select>
+                <select id="priceFilter" onchange="filterProducts()"><option value="">Todos preços</option><option value="3000">Até R$3.000</option><option value="5000">Até R$5.000</option><option value="10000">Até R$10.000</option></select>
+                <button class="filter-clear" onclick="clearFilters()">Limpar</button>
+            `;
+        } else if (currentCategory === 'perfumes') {
+            filtersDiv.innerHTML = `
+                <input type="text" id="searchInput" placeholder="🔍 Buscar perfume..." onkeyup="filterProducts()">
+                <select id="genderFilter" onchange="filterProducts()"><option value="">Todos gêneros</option><option value="masculino">👨 Masculino</option><option value="feminino">👩 Feminino</option><option value="unissex">🔄 Unissex</option></select>
+                <select id="priceFilter" onchange="filterProducts()"><option value="">Todos preços</option><option value="100">Até R$100</option><option value="200">Até R$200</option><option value="300">Até R$300</option></select>
+                <button class="filter-clear" onclick="clearFilters()">Limpar</button>
+            `;
+        } else {
+            filtersDiv.innerHTML = `
+                <input type="text" id="searchInput" placeholder="🔍 Buscar produto..." onkeyup="filterProducts()">
+                <select id="catFilter" onchange="filterProducts()"><option value="">Todas categorias</option><option value="fones">🎧 Fones</option><option value="carregadores">🔌 Carregadores</option><option value="capas">📱 Capas</option><option value="smartwatches">⌚ Smartwatches</option><option value="caixas-som">🔊 Caixas de Som</option></select>
+                <select id="priceFilter" onchange="filterProducts()"><option value="">Todos preços</option><option value="200">Até R$200</option><option value="500">Até R$500</option><option value="1000">Até R$1.000</option></select>
+                <button class="filter-clear" onclick="clearFilters()">Limpar</button>
+            `;
+        }
+        
+        filterProducts();
+    }
+    
+    function filterProducts() {
+        let items = [...products[currentCategory]];
+        const search = document.getElementById('searchInput')?.value.toLowerCase() || '';
+        
+        if (currentCategory === 'iphones') {
+            const storage = document.getElementById('storageFilter')?.value || '';
+            const priceLimit = parseFloat(document.getElementById('priceFilter')?.value) || 0;
+            items = items.filter(p => {
+                if (search && !p.nome.toLowerCase().includes(search)) return false;
+                if (storage && p.armazenamento !== storage) return false;
+                if (priceLimit && p.preco > priceLimit) return false;
+                return true;
+            });
+        } else if (currentCategory === 'perfumes') {
+            const gender = document.getElementById('genderFilter')?.value || '';
+            const priceLimit = parseFloat(document.getElementById('priceFilter')?.value) || 0;
+            items = items.filter(p => {
+                if (search && !p.nome.toLowerCase().includes(search)) return false;
+                if (gender && p.genero !== gender) return false;
+                if (priceLimit && p.preco > priceLimit) return false;
+                return true;
+            });
+        } else {
+            const catFilter = document.getElementById('catFilter')?.value || '';
+            const priceLimit = parseFloat(document.getElementById('priceFilter')?.value) || 0;
+            items = items.filter(p => {
+                if (search && !p.nome.toLowerCase().includes(search)) return false;
+                if (catFilter && p.categoria !== catFilter) return false;
+                if (priceLimit && p.preco > priceLimit) return false;
+                return true;
+            });
+        }
+        
+        const grid = document.getElementById('productsGrid');
+        if (!items.length) { grid.innerHTML = '<div style="text-align:center; padding:50px;">Nenhum produto encontrado 🔍</div>'; return; }
+        
+        grid.innerHTML = items.map(p => {
+            const save = p.precoAntigo ? p.precoAntigo - p.preco : 0;
+            let detailHtml = '';
+            if (currentCategory === 'iphones') detailHtml = `<div class="card-detail">${p.armazenamento} | ${p.condicao} | ${p.cor || ''}</div>`;
+            else if (currentCategory === 'perfumes') detailHtml = `<div class="card-detail">${p.marca} | ${p.volume} | ${p.genero === 'masculino' ? '👨 Masculino' : (p.genero === 'feminino' ? '👩 Feminino' : '🔄 Unissex')}</div>`;
+            else detailHtml = `<div class="card-detail">${p.marca} | ${p.categoria}</div>`;
+            
+            return `
+                <div class="product-card">
+                    <div class="card-img">${p.foto ? `<img src="${p.foto}">` : (currentCategory === 'iphones' ? '📱' : (currentCategory === 'perfumes' ? '🧴' : '🎧'))}</div>
+                    <div class="card-title">${p.nome}</div>
+                    ${detailHtml}
+                    ${p.precoAntigo ? `<div class="price-old">${formatPrice(p.precoAntigo)}</div>` : ''}
+                    <div class="price-current">${formatPrice(p.preco)}</div>
+                    <div class="installment">📦 ${getInstallment(p.preco)} sem juros</div>
+                    <div class="payment-badge"><span>💳 Cartão</span><span>📱 Pix (10% off)</span><span>📄 Boleto</span></div>
+                    <button class="btn-buy" onclick="buyProduct('${p.id}')">💬 Comprar via WhatsApp</button>
+                </div>
+            `;
+        }).join('');
+    }
+    
+    function buyProduct(id) {
+        const p = products[currentCategory].find(x => x.id === id);
+        if (!p) return;
+        let msg = `Olá! Tenho interesse no produto: ${p.nome}`;
+        if (currentCategory === 'iphones') msg += ` - ${p.armazenamento}`;
+        msg += `\nPreço: ${formatPrice(p.preco)}\nVi pelo site GUGA IPHONES.`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    
+    function clearFilters() {
+        document.getElementById('searchInput').value = '';
+        if (currentCategory === 'iphones') document.getElementById('storageFilter').value = '';
+        if (currentCategory === 'perfumes') document.getElementById('genderFilter').value = '';
+        if (currentCategory === 'eletronicos') document.getElementById('catFilter').value = '';
+        document.getElementById('priceFilter').value = '';
+        filterProducts();
+    }
+    
+    function switchCategory(cat) {
+        currentCategory = cat;
+        document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        renderCurrentCategory();
+    }
+    
+    // ==================== ADMIN ====================
+    let editingItem = null;
+    let editingCategory = null;
+    
+    function openAdminLogin() { document.getElementById('loginModal').style.display = 'flex'; }
+    function closeLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+    
+    function checkAdminLogin() {
+        const pass = document.getElementById('adminPassword').value;
+        if (pass === ADMIN_PASS) { closeLoginModal(); openAdminPanel(); }
+        else { showToast('Senha incorreta!', 'error'); }
+    }
+    
+    function openAdminPanel() {
+        document.getElementById('adminPanel').classList.add('open');
+        renderAdminPanel();
+    }
+    
+    function closeAdminPanel() { document.getElementById('adminPanel').classList.remove('open'); editingItem = null; }
+    
+    function renderAdminPanel() {
+        const tabsDiv = document.getElementById('adminTabs');
+        const sectionsDiv = document.getElementById('adminSections');
+        const categories = ['iphones', 'perfumes', 'eletronicos'];
+        const names = { iphones: '📱 iPhones', perfumes: '✨ Perfumes', eletronicos: '🎧 Acessórios' };
+        
+        tabsDiv.innerHTML = categories.map((cat, i) => `<button class="tab-btn ${i === 0 ? 'active' : ''}" onclick="switchAdminTab('${cat}')">${names[cat]}</button>`).join('');
+        
+        sectionsDiv.innerHTML = categories.map(cat => `
+            <div id="tab-${cat}" class="admin-section ${cat === 'iphones' ? 'active' : ''}">
+                <div class="form-card">
+                    <h3 style="margin-bottom:20px;">➕ Adicionar ${names[cat]}</h3>
+                    <div id="form-${cat}"></div>
+                    <button class="admin-save" onclick="saveProduct('${cat}')">💾 SALVAR PRODUTO</button>
+                </div>
+                <div class="form-card">
+                    <h3 style="margin-bottom:20px;">📋 Gerenciar ${names[cat]}</h3>
+                    <div id="list-${cat}" class="products-list"></div>
+                </div>
+            </div>
+        `).join('');
+        
+        categories.forEach(cat => {
+            renderAdminForm(cat);
+            renderAdminList(cat);
+        });
+    }
+    
+    function renderAdminForm(cat) {
+        const container = document.getElementById(`form-${cat}`);
+        if (cat === 'iphones') {
+            container.innerHTML = `
+                <div class="form-group"><label>Modelo *</label><input type="text" id="edit_nome" placeholder="Ex: iPhone 15 Pro Max"></div>
+                <div class="form-row"><div class="form-group"><label>Armazenamento</label><select id="edit_armazenamento"><option>128GB</option><option>256GB</option><option>512GB</option></select></div>
+                <div class="form-group"><label>Preço *</label><input type="number" id="edit_preco" placeholder="6299"></div></div>
+                <div class="form-row"><div class="form-group"><label>Preço Antigo</label><input type="number" id="edit_precoAntigo" placeholder="7499"></div>
+                <div class="form-group"><label>Condição</label><select id="edit_condicao"><option>Novo</option><option>Recondicionado</option><option>Usado</option></select></div></div>
+                <div class="form-row"><div class="form-group"><label>Cor</label><input type="text" id="edit_cor" placeholder="Titânio Natural"></div>
+                <div class="form-group"><label>Foto URL</label><input type="text" id="edit_foto" placeholder="https://..."><input type="file" accept="image/*" onchange="uploadPhoto(this, 'edit_foto')" style="margin-top:8px;"></div></div>
+            `;
+        } else if (cat === 'perfumes') {
+            container.innerHTML = `
+                <div class="form-group"><label>Nome *</label><input type="text" id="edit_nome" placeholder="Ex: 212 Vip Black"></div>
+                <div class="form-row"><div class="form-group"><label>Marca</label><input type="text" id="edit_marca" placeholder="Carolina Herrera"></div>
+                <div class="form-group"><label>Preço *</label><input type="number" id="edit_preco" placeholder="289"></div></div>
+                <div class="form-row"><div class="form-group"><label>Preço Antigo</label><input type="number" id="edit_precoAntigo" placeholder="399"></div>
+                <div class="form-group"><label>Gênero</label><select id="edit_genero"><option value="masculino">👨 Masculino</option><option value="feminino">👩 Feminino</option><option value="unissex">🔄 Unissex</option></select></div></div>
+                <div class="form-row"><div class="form-group"><label>Volume</label><input type="text" id="edit_volume" placeholder="100ml"></div>
+                <div class="form-group"><label>Foto URL</label><input type="text" id="edit_foto" placeholder="https://..."><input type="file" accept="image/*" onchange="uploadPhoto(this, 'edit_foto')" style="margin-top:8px;"></div></div>
+            `;
+        } else {
+            container.innerHTML = `
+                <div class="form-group"><label>Nome *</label><input type="text" id="edit_nome" placeholder="Ex: AirPods Pro 2"></div>
+                <div class="form-row"><div class="form-group"><label>Categoria</label><select id="edit_categoria"><option value="fones">🎧 Fones</option><option value="carregadores">🔌 Carregadores</option><option value="capas">📱 Capas</option><option value="smartwatches">⌚ Smartwatches</option><option value="caixas-som">🔊 Caixas de Som</option></select></div>
+                <div class="form-group"><label>Marca</label><input type="text" id="edit_marca" placeholder="Apple"></div></div>
+                <div class="form-row"><div class="form-group"><label>Preço *</label><input type="number" id="edit_preco" placeholder="1899"></div>
+                <div class="form-group"><label>Preço Antigo</label><input type="number" id="edit_precoAntigo" placeholder="2299"></div></div>
+                <div class="form-group"><label>Foto URL</label><input type="text" id="edit_foto" placeholder="https://..."><input type="file" accept="image/*" onchange="uploadPhoto(this, 'edit_foto')" style="margin-top:8px;"></div>
+            `;
+        }
+    }
+    
+    function renderAdminList(cat) {
+        const container = document.getElementById(`list-${cat}`);
+        const items = products[cat];
+        if (!items.length) { container.innerHTML = '<div style="padding:20px; text-align:center;">Nenhum produto cadastrado</div>'; return; }
+        container.innerHTML = items.map(p => `
+            <div class="product-row">
+                <div><strong>${p.nome}</strong><br><span style="font-size:12px; color:#94a3b8;">${cat === 'iphones' ? p.armazenamento : (cat === 'perfumes' ? p.marca : p.categoria)} | ${formatPrice(p.preco)}</span></div>
+                <div style="display:flex; gap:8px;"><button class="btn-edit" onclick="editProduct('${cat}', '${p.id}')">✏️ Editar</button><button class="btn-del" onclick="deleteProduct('${cat}', '${p.id}')">🗑️ Excluir</button></div>
+            </div>
+        `).join('');
+    }
+    
+    function switchAdminTab(cat) {
+        document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+        document.getElementById(`tab-${cat}`).classList.add('active');
+        document.querySelectorAll('.tab-btn').forEach((btn, i) => btn.classList.toggle('active', i === ['iphones','perfumes','eletronicos'].indexOf(cat)));
+        editingItem = null;
+        editingCategory = null;
+        renderAdminForm(cat);
+    }
+    
+    function editProduct(cat, id) {
+        const p = products[cat].find(x => x.id === id);
+        if (!p) return;
+        editingItem = p;
+        editingCategory = cat;
+        switchAdminTab(cat);
+        setTimeout(() => {
+            document.getElementById('edit_nome').value = p.nome || '';
+            document.getElementById('edit_preco').value = p.preco || '';
+            document.getElementById('edit_precoAntigo').value = p.precoAntigo || '';
+            if (cat === 'iphones') {
+                document.getElementById('edit_armazenamento').value = p.armazenamento || '128GB';
+                document.getElementById('edit_condicao').value = p.condicao || 'Novo';
+                document.getElementById('edit_cor').value = p.cor || '';
+                document.getElementById('edit_foto').value = p.foto || '';
+            } else if (cat === 'perfumes') {
+                document.getElementById('edit_marca').value = p.marca || '';
+                document.getElementById('edit_genero').value = p.genero || 'masculino';
+                document.getElementById('edit_volume').value = p.volume || '100ml';
+                document.getElementById('edit_foto').value = p.foto || '';
+            } else {
+                document.getElementById('edit_categoria').value = p.categoria || 'fones';
+                document.getElementById('edit_marca').value = p.marca || '';
+                document.getElementById('edit_foto').value = p.foto || '';
+            }
+        }, 50);
+    }
+    
+    async function deleteProduct(cat, id) {
+        if (!confirm('Excluir este produto?')) return;
+        products[cat] = products[cat].filter(p => p.id !== id);
+        await saveCategory(cat);
+        renderAdminList(cat);
+        if (currentCategory === cat) renderCurrentCategory();
+        showToast('Produto excluído!');
+    }
+    
+    async function saveProduct(cat) {
+        const nome = document.getElementById('edit_nome')?.value.trim();
+        const preco = parseFloat(document.getElementById('edit_preco')?.value);
+        if (!nome || isNaN(preco)) { showToast('Preencha nome e preço!', 'error'); return; }
+        
+        const newProduct = { id: editingItem?.id || Date.now().toString(), nome, preco, precoAntigo: parseFloat(document.getElementById('edit_precoAntigo')?.value) || null, foto: document.getElementById('edit_foto')?.value || '' };
+        
+        if (cat === 'iphones') {
+            newProduct.armazenamento = document.getElementById('edit_armazenamento')?.value;
+            newProduct.condicao = document.getElementById('edit_condicao')?.value;
+            newProduct.cor = document.getElementById('edit_cor')?.value;
+        } else if (cat === 'perfumes') {
+            newProduct.marca = document.getElementById('edit_marca')?.value;
+            newProduct.genero = document.getElementById('edit_genero')?.value;
+            newProduct.volume = document.getElementById('edit_volume')?.value || '100ml';
+        } else {
+            newProduct.categoria = document.getElementById('edit_categoria')?.value;
+            newProduct.marca = document.getElementById('edit_marca')?.value;
+        }
+        
+        if (editingItem && editingCategory === cat) {
+            const index = products[cat].findIndex(p => p.id === editingItem.id);
+            if (index !== -1) products[cat][index] = newProduct;
+            showToast('Produto atualizado!');
+            editingItem = null;
+            editingCategory = null;
+        } else {
+            products[cat].push(newProduct);
+            showToast('Produto adicionado!');
+        }
+        
+        await saveCategory(cat);
+        renderAdminList(cat);
+        if (currentCategory === cat) renderCurrentCategory();
+        renderAdminForm(cat);
+    }
+    
+    async function uploadPhoto(input, targetId) {
+        if (!input.files.length) return;
+        showToast('Enviando foto...');
+        try {
+            const url = await uploadToImgBB(input.files[0]);
+            document.getElementById(targetId).value = url;
+            showToast('Foto enviada!');
+        } catch(e) { showToast('Erro no upload', 'error'); }
+    }
+    
+    function showToast(msg, type = 'success') {
+        const toast = document.getElementById('toast');
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+    
+    // ==================== INICIAR ====================
+    window.switchCategory = switchCategory;
+    window.switchAdminTab = switchAdminTab;
+    window.editProduct = editProduct;
+    window.deleteProduct = deleteProduct;
+    window.saveProduct = saveProduct;
+    window.uploadPhoto = uploadPhoto;
+    window.filterProducts = filterProducts;
+    window.clearFilters = clearFilters;
+    window.buyProduct = buyProduct;
+    window.openAdminLogin = openAdminLogin;
+    window.closeLoginModal = closeLoginModal;
+    window.checkAdminCheck = checkAdminLogin;
+    window.closeAdminPanel = closeAdminPanel;
+    
+    loadData();
 </script>
 </body>
 </html>
