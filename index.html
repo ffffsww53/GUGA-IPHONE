@@ -9,8 +9,8 @@
 <style>
 :root{--bg:#080c14;--bg2:#0d1420;--card:#111827;--card2:#151e2e;--border:rgba(255,255,255,0.07);--blue:#1e90ff;--blue2:#0a6efd;--cyan:#00cfff;--accent-glow:rgba(30,144,255,0.25);--text:#f0f4ff;--text2:#8a96b0;--text3:#5a657e;--green:#00d97e;--orange:#ff7c22;--red:#ff4545;--radius:16px;--radius-sm:10px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;width:100%}
 h1,h2,h3,h4,h5{font-family:'Syne',sans-serif}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
@@ -277,7 +277,9 @@ footer strong{color:var(--text2)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.success{border-color:rgba(0,217,126,.4);color:var(--green)}
 .toast.error{border-color:rgba(255,69,69,.4);color:var(--red)}
+.toast.info{border-color:rgba(30,144,255,.4);color:var(--cyan)}
 
+/* RESPONSIVO CELULAR */
 @media(max-width:640px){
   nav{display:none}
   .header-cta span{display:none}
@@ -287,51 +289,51 @@ footer strong{color:var(--text2)}
   .form-grid{grid-template-columns:1fr}
   .admin-tabs{gap:2px}
   .admin-tab{padding:6px 8px;font-size:.78rem}
+
   .header-inner {
-  gap: 4px;
-  padding: 0 8px;
-}
+    gap: 4px;
+    padding: 0 8px;
+  }
+  
+  .logo {
+    font-size: 0.85rem;
+  }
+  
+  .logo span {
+    display: none;
+  }
+  
+  .admin-btn-header {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+  
+  .float-wa {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    right: 12px;
+    bottom: 20px;
+  }
 
-.logo {
-  font-size: 0.85rem;
-}
-
-.logo span {
-  display: none;
-}
-
-.admin-btn-header {
-  padding: 5px 8px;
-  font-size: 0.7rem;
-}
-
-.float-wa {
-  width: 45px;
-  height: 45px;
-  font-size: 1.2rem;
-  right: 12px;
-  bottom: 20px;
-}
-  /* Ajusta os cards de contato no celular */
-.contact-cards {
-  grid-template-columns: 1fr !important;
-}
-
-.contact-card {
-  padding: 16px !important;
-}
-
-.contact-val {
-  font-size: 0.8rem !important;
-  word-break: break-all !important;
-}
-
-/* Ajusta o footer/rodapé */
-footer p {
-  font-size: 0.7rem !important;
-  word-break: break-word !important;
-  padding: 0 10px !important;
-}
+  .contact-cards {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .contact-card {
+    padding: 16px !important;
+  }
+  
+  .contact-val {
+    font-size: 0.8rem !important;
+    word-break: break-all !important;
+  }
+  
+  footer p {
+    font-size: 0.7rem !important;
+    word-break: break-word !important;
+    padding: 0 10px !important;
+  }
 }
 </style>
 </head>
@@ -545,8 +547,8 @@ footer p {
         • <strong style="color:var(--text)">📋 Gerenciar</strong> — Editar, excluir e destacar iPhones<br>
         • <strong style="color:var(--text)">🎒 Acessório</strong> — Cadastrar novos acessórios<br>
         • <strong style="color:var(--text)">🗂️ Acessórios</strong> — Gerenciar acessórios cadastrados<br><br>
-        <span style="color:var(--green)">✅ Todos os dados são salvos online e visíveis para todos os visitantes!</span><br>
-        <span style="color:var(--orange)">⚠️ Você precisa de internet para editar os produtos.</span>
+        <span style="color:var(--green)">✅ Os dados são salvos online (JSONBin) e as fotos no ImgBB!</span><br>
+        <span style="color:var(--orange)">⚠️ Todos os visitantes veem os mesmos produtos.</span>
       </div>
     </div>
 
@@ -708,17 +710,30 @@ footer p {
 
 <script>
 'use strict';
-// ══════════ CONFIGURAÇÃO DO JSONBIN ══════════
-// 👇 COLOQUE SUAS CREDENCIAIS AQUI 👇
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// ⚠️ ⚠️ ⚠️ CONFIGURE AQUI AS SUAS 4 CHAVES ⚠️ ⚠️ ⚠️
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// 1️⃣ Chave da API do ImgBB (para as fotos)
+const IMGBB_API_KEY = '9bd992ebf86665062298438cc4bfe973';
+
+// 2️⃣ Chave mestra do JSONBin (para os dados)
 const JSONBIN_API_KEY = '$2a$10$eqsYzyzhWQRisqpMRtEJZetkhuMmcWwGXy6MWDneMK/pUvQf9gG4O';
+
+// 3️⃣ ID do bin de PRODUTOS no JSONBin
 const PRODUCTS_BIN_ID = '69e6c42536566621a8d4a96c';
+
+// 4️⃣ ID do bin de ACESSÓRIOS no JSONBin
 const ACCESSORIES_BIN_ID = '69e6c4db36566621a8d4acc6';
 
-// ══════════ CONFIGURAÇÕES ══════════
-const WA = '5521967519632';
-const ADMIN_PASS = 'batima2026'; // Altere a senha aqui
+// ═══════════════════════════════════════════════════════════════════════════════
 
-// ══════════ DADOS PADRÃO (caso não carregue do servidor) ══════════
+// Configurações
+const WA = '5521967519632';
+const ADMIN_PASS = 'batima2026';
+
+// Dados padrão (fallback)
 const DEFAULT_PRODUCTS = [
   {id:'p1',model:'iPhone 16 Pro Max',storage:'256GB',price:9499,oldPrice:10999,condition:'Novo',stock:'Em estoque',guarantee:'12 meses',highlight:true,color:'Titânio Natural',photos:[],specs:{Tela:'6.9" Super Retina XDR',Processador:'A18 Pro',Câmera:'48MP + 12MP + 12MP',Bateria:'4685mAh'},inbox:['iPhone','Cabo USB-C','Documentação']},
   {id:'p2',model:'iPhone 16 Pro',storage:'128GB',price:7799,oldPrice:8999,condition:'Novo',stock:'Últimas unidades',guarantee:'12 meses',highlight:true,color:'Titânio Preto',photos:[],specs:{Tela:'6.3" Super Retina XDR',Processador:'A18 Pro',Câmera:'48MP + 12MP + 12MP',Bateria:'3582mAh'},inbox:['iPhone','Cabo USB-C','Documentação']},
@@ -727,6 +742,7 @@ const DEFAULT_PRODUCTS = [
   {id:'p5',model:'iPhone 14 Pro',storage:'256GB',price:5199,oldPrice:6299,condition:'Recondicionado',stock:'Últimas unidades',guarantee:'6 meses',highlight:false,color:'Roxo Intenso',photos:[],specs:{Tela:'6.1" Super Retina XDR',Processador:'A16 Bionic',Câmera:'48MP + 12MP + 12MP',Bateria:'3200mAh'},inbox:['iPhone','Cabo Lightning','Película']},
   {id:'p6',model:'iPhone 13',storage:'128GB',price:2699,oldPrice:3299,condition:'Usado',stock:'Últimas unidades',guarantee:'3 meses',highlight:false,color:'Meia-Noite',photos:[],specs:{Tela:'6.1" Super Retina XDR',Processador:'A15 Bionic',Câmera:'12MP + 12MP',Bateria:'3227mAh'},inbox:['iPhone','Cabo Lightning']}
 ];
+
 const DEFAULT_ACCESSORIES = [
   {id:'a1',name:'Carregador USB-C 20W Original',price:149,emoji:'⚡',category:'carregador',photo:''},
   {id:'a2',name:'Carregador MagSafe 15W',price:229,emoji:'🔌',category:'carregador',photo:''},
@@ -736,9 +752,9 @@ const DEFAULT_ACCESSORIES = [
   {id:'a6',name:'Capa Couro Premium MagSafe',price:189,emoji:'👜',category:'capa',photo:''}
 ];
 
-// ══════════ STORAGE COM JSONBIN ══════════
-let produtosCache = null;
-let acessoriosCache = null;
+// ═══════════════════════════════════════════════════════════════════════════════
+// STORAGE COM JSONBIN (ONLINE - TODOS VEEM OS MESMOS PRODUTOS)
+// ═══════════════════════════════════════════════════════════════════════════════
 
 async function loadP() {
   try {
@@ -747,12 +763,10 @@ async function loadP() {
     });
     const data = await response.json();
     if (data.record && Array.isArray(data.record) && data.record.length) {
-      produtosCache = data.record;
-      return produtosCache;
+      return data.record;
     }
   } catch(e) { console.log('Erro ao carregar produtos:', e); }
-  produtosCache = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
-  return produtosCache;
+  return JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
 }
 
 async function saveP(produtos) {
@@ -765,7 +779,6 @@ async function saveP(produtos) {
       },
       body: JSON.stringify(produtos)
     });
-    produtosCache = produtos;
     return true;
   } catch(e) {
     console.log('Erro ao salvar:', e);
@@ -781,12 +794,10 @@ async function loadA() {
     });
     const data = await response.json();
     if (data.record && Array.isArray(data.record) && data.record.length) {
-      acessoriosCache = data.record;
-      return acessoriosCache;
+      return data.record;
     }
   } catch(e) { console.log('Erro ao carregar acessórios:', e); }
-  acessoriosCache = JSON.parse(JSON.stringify(DEFAULT_ACCESSORIES));
-  return acessoriosCache;
+  return JSON.parse(JSON.stringify(DEFAULT_ACCESSORIES));
 }
 
 async function saveA(acessorios) {
@@ -799,7 +810,6 @@ async function saveA(acessorios) {
       },
       body: JSON.stringify(acessorios)
     });
-    acessoriosCache = acessorios;
     return true;
   } catch(e) {
     console.log('Erro ao salvar:', e);
@@ -808,27 +818,64 @@ async function saveA(acessorios) {
   }
 }
 
-// ══════════ VARIÁVEIS GLOBAIS ══════════
+// ═══════════════════════════════════════════════════════════════════════════════
+// UPLOAD PARA IMGBB (FOTOS HOSPEDADAS ONLINE)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+async function uploadParaImgBB(file) {
+  return new Promise((resolve, reject) => {
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('key', IMGBB_API_KEY);
+    
+    fetch('https://api.imgbb.com/1/upload', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        resolve(data.data.url);
+      } else {
+        reject('Erro no upload: ' + (data.error?.message || 'desconhecido'));
+      }
+    })
+    .catch(error => reject('Erro: ' + error));
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// VARIÁVEIS GLOBAIS
+// ═══════════════════════════════════════════════════════════════════════════════
+
 let pPhotos = [];
 let aPhoto = '';
 
-// ══════════ HELPERS ══════════
+// ═══════════════════════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+
 const fmt = v => 'R$ ' + Number(v).toLocaleString('pt-BR');
 const uid = () => 'p' + Date.now() + Math.random().toString(36).slice(2,6);
+
 function waP(p) {
   const m = encodeURIComponent(`Olá, GUGA IPHONES! Tenho interesse no produto:\n${p.model} – ${p.storage}\nPreço: ${fmt(p.price)}\nVi pelo site\n\nPoderia me passar mais informações sobre disponibilidade e formas de pagamento?`);
   return `https://wa.me/${WA}?text=${m}`;
 }
+
 function waA(a) {
   const m = encodeURIComponent(`Olá, GUGA IPHONES! Tenho interesse no produto:\n${a.name}\nPreço: ${fmt(a.price)}\nVi pelo site\n\nPoderia me passar mais informações sobre disponibilidade e formas de pagamento?`);
   return `https://wa.me/${WA}?text=${m}`;
 }
+
 function cbadge(c) {
   return c === 'Novo' ? '<span class="badge badge-blue">✨ Novo</span>' : c === 'Recondicionado' ? '<span class="badge badge-green">🔬 Recondicionado</span>' : '<span class="badge badge-gray">📦 Usado</span>';
 }
+
 function sbadge(s) {
   return s === 'Últimas unidades' ? '<span class="badge badge-orange">🔥 Últimas unidades</span>' : s === 'Sem estoque' ? '<span class="badge" style="background:rgba(255,69,69,.1);border:1px solid rgba(255,69,69,.3);color:var(--red)">❌ Sem estoque</span>' : '<span class="badge badge-green">✅ Em estoque</span>';
 }
+
 function toast(msg, type = 'success') {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -859,6 +906,10 @@ function renderCard(p) {
     </div>
   </div>`;
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// STOREFRONT
+// ═══════════════════════════════════════════════════════════════════════════════
 
 async function filterProducts() {
   const s = document.getElementById('search-input').value.toLowerCase();
@@ -912,13 +963,17 @@ async function renderAcc(cat) {
     </div>
   </div>`).join('');
 }
+
 function filterAcc(cat, btn) {
   document.querySelectorAll('.acc-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   renderAcc(cat);
 }
 
-// ══════════ MODAL ══════════
+// ═══════════════════════════════════════════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════════════════════════════════════════
+
 async function openModal(id) {
   const p = (await loadP()).find(x => x.id === id);
   if (!p) return;
@@ -954,19 +1009,25 @@ async function openModal(id) {
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
 function swGal(th, src) {
   document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
   th.classList.add('active');
   document.getElementById('gal-main').innerHTML = `<img src="${src}" alt="foto">`;
 }
+
 function closeModal(e) {
   if (e && e.target !== document.getElementById('modal')) return;
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
 }
+
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeAdminLogin(); } });
 
-// ══════════ ADMIN AUTH ══════════
+// ═══════════════════════════════════════════════════════════════════════════════
+// ADMIN AUTH
+// ═══════════════════════════════════════════════════════════════════════════════
+
 function openAdminLogin() { document.getElementById('admin-login').classList.add('open'); document.getElementById('admin-password').value = ''; document.getElementById('login-error').style.display = 'none'; setTimeout(() => document.getElementById('admin-password').focus(), 300); }
 function closeAdminLogin() { document.getElementById('admin-login').classList.remove('open'); }
 function doLogin() {
@@ -975,7 +1036,10 @@ function doLogin() {
   else { document.getElementById('login-error').style.display = 'block'; document.getElementById('admin-password').value = ''; document.getElementById('admin-password').focus(); }
 }
 
-// ══════════ ADMIN PANEL ══════════
+// ═══════════════════════════════════════════════════════════════════════════════
+// ADMIN PANEL
+// ═══════════════════════════════════════════════════════════════════════════════
+
 async function openAdminPanel() {
   document.getElementById('admin-panel').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -985,6 +1049,7 @@ async function openAdminPanel() {
   resetPForm();
   resetSpecFields();
 }
+
 function closeAdminPanel() {
   document.getElementById('admin-panel').classList.remove('open');
   document.body.style.overflow = '';
@@ -992,6 +1057,7 @@ function closeAdminPanel() {
   filterProducts();
   renderAcc('all');
 }
+
 function switchTab(name, btn) {
   document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
@@ -1001,6 +1067,7 @@ function switchTab(name, btn) {
   if (name === 'manage-acc') renderAdminAList();
   if (name === 'dashboard') refreshDash();
 }
+
 async function refreshDash() {
   const p = await loadP();
   const a = await loadA();
@@ -1030,6 +1097,7 @@ async function renderAdminPList() {
     </div>
   </div>`).join('');
 }
+
 async function toggleHL(id) {
   const p = await loadP();
   const x = p.find(y => y.id === id);
@@ -1039,6 +1107,7 @@ async function toggleHL(id) {
   await renderAdminPList();
   toast(x.highlight ? '⭐ Produto destacado' : 'Destaque removido');
 }
+
 async function delProduct(id) {
   if (!confirm('Excluir este produto?')) return;
   const p = await loadP();
@@ -1048,6 +1117,7 @@ async function delProduct(id) {
   refreshDash();
   toast('🗑️ Produto excluído');
 }
+
 async function editProduct(id) {
   const p = await loadP();
   const prod = p.find(x => x.id === id);
@@ -1070,7 +1140,9 @@ async function editProduct(id) {
   pPhotos = prod.photos ? [...prod.photos] : [];
   renderPPreviews();
 }
+
 function cancelProductEdit() { resetPForm(); resetSpecFields(); switchTab('manage-products', document.getElementById('tab-btn-manage-products')); }
+
 function resetPForm() {
   document.getElementById('product-form-title').textContent = 'Novo iPhone';
   document.getElementById('edit-product-id').value = '';
@@ -1084,10 +1156,12 @@ function resetPForm() {
   document.getElementById('p-previews').innerHTML = '';
   document.getElementById('p-photo-hint').textContent = '';
 }
+
 function resetSpecFields() {
   document.getElementById('spec-fields').innerHTML = '';
   [['Tela', ''], ['Processador', ''], ['Câmera', ''], ['Bateria', '']].forEach(([k, v]) => addSpecRow(k, v));
 }
+
 function addSpecRow(k = '', v = '') {
   const sf = document.getElementById('spec-fields');
   const r = document.createElement('div');
@@ -1095,6 +1169,7 @@ function addSpecRow(k = '', v = '') {
   r.innerHTML = `<input type="text" placeholder="Nome (ex: Tela)" value="${k}"><input type="text" placeholder="Valor (ex: 6.1&quot; OLED)" value="${v}"><button type="button" class="btn-rm" onclick="this.parentElement.remove()">✕</button>`;
   sf.appendChild(r);
 }
+
 function getSpecs() {
   const specs = {};
   document.querySelectorAll('#spec-fields .spec-row').forEach(r => {
@@ -1104,6 +1179,7 @@ function getSpecs() {
   });
   return specs;
 }
+
 async function saveProduct() {
   const model = document.getElementById('p-model').value.trim();
   const price = parseFloat(document.getElementById('p-price').value);
@@ -1138,6 +1214,7 @@ async function saveProduct() {
   refreshDash();
   switchTab('manage-products', document.getElementById('tab-btn-manage-products'));
 }
+
 async function renderAdminAList() {
   const a = await loadA();
   const list = document.getElementById('admin-acc-list');
@@ -1155,6 +1232,7 @@ async function renderAdminAList() {
     </div>
   </div>`).join('');
 }
+
 async function delAcc(id) {
   if (!confirm('Excluir?')) return;
   const a = await loadA();
@@ -1164,6 +1242,7 @@ async function delAcc(id) {
   refreshDash();
   toast('🗑️ Acessório excluído');
 }
+
 async function editAcc(id) {
   const a = await loadA();
   const acc = a.find(x => x.id === id);
@@ -1178,7 +1257,9 @@ async function editAcc(id) {
   aPhoto = acc.photo || '';
   document.getElementById('a-previews').innerHTML = aPhoto ? `<div class="photo-preview-item"><img src="${aPhoto}"><button class="photo-preview-del" onclick="clearAPhoto()">✕</button></div>` : '';
 }
+
 function cancelAccEdit() { resetAForm(); switchTab('manage-acc', document.getElementById('tab-btn-manage-acc')); }
+
 function resetAForm() {
   document.getElementById('acc-form-title').textContent = 'Novo Acessório';
   document.getElementById('edit-acc-id').value = '';
@@ -1187,7 +1268,9 @@ function resetAForm() {
   aPhoto = '';
   document.getElementById('a-previews').innerHTML = '';
 }
+
 function clearAPhoto() { aPhoto = ''; document.getElementById('a-previews').innerHTML = ''; }
+
 async function saveAcc() {
   const name = document.getElementById('a-name').value.trim();
   const price = parseFloat(document.getElementById('a-price').value);
@@ -1216,39 +1299,64 @@ async function saveAcc() {
   switchTab('manage-acc', document.getElementById('tab-btn-manage-acc'));
 }
 
-// ══════════ PHOTO UPLOAD ══════════
-function handleProductPhotos(input) {
+// ═══════════════════════════════════════════════════════════════════════════════
+// PHOTO UPLOAD HANDLERS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+async function handleProductPhotos(input) {
   const files = Array.from(input.files).slice(0, 10);
-  files.forEach(f => {
-    const r = new FileReader();
-    r.onload = e => { pPhotos.push(e.target.result); renderPPreviews(); };
-    r.readAsDataURL(f);
-  });
-  input.value = '';
-}
-function renderPPreviews() {
-  document.getElementById('p-previews').innerHTML = pPhotos.map((src, i) => `<div class="photo-preview-item"><img src="${src}" alt="${i+1}"><button class="photo-preview-del" onclick="rmPhoto(${i})">✕</button></div>`).join('');
-  document.getElementById('p-photo-hint').textContent = pPhotos.length ? `${pPhotos.length} foto(s) carregada(s)` : '';
-}
-function rmPhoto(i) { pPhotos.splice(i, 1); renderPPreviews(); }
-function handleAccPhoto(input) {
-  if (!input.files.length) return;
-  const r = new FileReader();
-  r.onload = e => {
-    aPhoto = e.target.result;
-    document.getElementById('a-previews').innerHTML = `<div class="photo-preview-item"><img src="${aPhoto}"><button class="photo-preview-del" onclick="clearAPhoto()">✕</button></div>`;
-  };
-  r.readAsDataURL(input.files[0]);
+  if (files.length === 0) return;
+  
+  toast('📤 Enviando fotos para o ImgBB... Aguarde!', 'info');
+  
+  for (const file of files) {
+    try {
+      const imageUrl = await uploadParaImgBB(file);
+      pPhotos.push(imageUrl);
+      toast(`✅ ${file.name} enviada!`, 'success');
+    } catch (error) {
+      toast(`❌ Erro ao enviar ${file.name}: ${error}`, 'error');
+    }
+  }
+  renderPPreviews();
   input.value = '';
 }
 
-// ══════════ INIT ══════════
+async function handleAccPhoto(input) {
+  if (!input.files.length) return;
+  const file = input.files[0];
+  toast('📤 Enviando foto para o ImgBB...', 'info');
+  try {
+    const imageUrl = await uploadParaImgBB(file);
+    aPhoto = imageUrl;
+    document.getElementById('a-previews').innerHTML = `<div class="photo-preview-item"><img src="${aPhoto}"><button class="photo-preview-del" onclick="clearAPhoto()">✕</button></div>`;
+    toast('✅ Foto enviada com sucesso!', 'success');
+  } catch (error) {
+    toast(`❌ Erro ao enviar: ${error}`, 'error');
+  }
+  input.value = '';
+}
+
+function renderPPreviews() {
+  document.getElementById('p-previews').innerHTML = pPhotos.map((src, i) => `
+    <div class="photo-preview-item">
+      <img src="${src}" alt="${i+1}">
+      <button class="photo-preview-del" onclick="rmPhoto(${i})">✕</button>
+    </div>
+  `).join('');
+  document.getElementById('p-photo-hint').textContent = pPhotos.length ? `${pPhotos.length} foto(s) carregada(s)` : '';
+}
+
+function rmPhoto(i) { pPhotos.splice(i, 1); renderPPreviews(); }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════════════════════
+
 resetSpecFields();
-(async function init() {
-  await renderHighlights();
-  await filterProducts();
-  await renderAcc('all');
-})();
+renderHighlights();
+filterProducts();
+renderAcc('all');
 </script>
 </body>
 </html>
